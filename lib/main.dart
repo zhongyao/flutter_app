@@ -8,8 +8,11 @@ import 'package:startup_namer/counter.dart';
 import 'package:startup_namer/gesture.dart';
 import 'package:startup_namer/shopping_list.dart';
 import 'package:startup_namer/grid_and_list.dart';
+import 'package:startup_namer/stack.dart';
 
-void main() => runApp(GridApp());
+import 'package:startup_namer/interact.dart';
+
+void main() => runApp(InteractApp());
 
 class MyApp extends StatelessWidget {
   @override
