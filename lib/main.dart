@@ -12,7 +12,9 @@ import 'package:startup_namer/stack.dart';
 
 import 'package:startup_namer/interact.dart';
 
-void main() => runApp(InteractApp());
+import 'anim/ImplicitlyAnim.dart';
+
+void main() => runApp(MyApp());
 
 class MyApp extends StatelessWidget {
   @override
@@ -22,13 +24,7 @@ class MyApp extends StatelessWidget {
       theme: new ThemeData(
         primaryColor: Colors.orange,
       ),
-      home: ShoppingList(
-        products: <Product>[
-          Product(name: 'Eggs'),
-          Product(name: 'Flour'),
-          Product(name: 'Chocolate chips'),
-        ],
-      ),
+      home: FadeInDemo(),
     );
   }
 }
