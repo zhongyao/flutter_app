@@ -12,6 +12,7 @@ import 'package:startup_namer/stack.dart';
 
 import 'package:startup_namer/interact.dart';
 
+import 'anim/AnimatedContainer.dart';
 import 'anim/ImplicitlyAnim.dart';
 
 void main() => runApp(MyApp());
@@ -24,7 +25,7 @@ class MyApp extends StatelessWidget {
       theme: new ThemeData(
         primaryColor: Colors.orange,
       ),
-      home: FadeInDemo(),
+      home: AnimatedContainerDemo(),
     );
   }
 }
