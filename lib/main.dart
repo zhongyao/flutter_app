@@ -14,8 +14,9 @@ import 'package:startup_namer/interact.dart';
 
 import 'anim/AnimatedContainer.dart';
 import 'anim/ImplicitlyAnim.dart';
+import 'anim/anim.dart';
 
-void main() => runApp(MyApp());
+void main() => runApp(AnimApp());
 
 class MyApp extends StatelessWidget {
   @override
