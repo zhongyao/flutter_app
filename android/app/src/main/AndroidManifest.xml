@@ -1,5 +1,6 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.hongri.startup_namer">
+    <uses-permission android:name="android.permission.INTERNET" />
    <application
         android:label="startup_namer"
         android:icon="@mipmap/ic_launcher">
