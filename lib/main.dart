@@ -4,8 +4,9 @@
 
 import 'package:flutter/material.dart';
 import 'package:english_words/english_words.dart';
-import 'package:startup_namer/counter.dart';
 import 'package:startup_namer/gesture.dart';
+import 'provider/home_page.dart';
+import 'provider/my_counter.dart';
 import 'package:startup_namer/shopping_list.dart';
 import 'package:startup_namer/grid_and_list.dart';
 import 'package:startup_namer/stack.dart';
@@ -15,18 +16,24 @@ import 'package:startup_namer/interact.dart';
 import 'anim/AnimatedContainer.dart';
 import 'anim/ImplicitlyAnim.dart';
 import 'anim/anim.dart';
+import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 
-void main() => runApp(AnimApp());
+void main() => runApp(ChangeNotifierProvider<MyCounter>.value(
+      // notifier: MyCounter(1),
+      value:  MyCounter(1),
+      child: MyApp(),
+    ));
 
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'flutter',
+      title: 'Provider',
       theme: new ThemeData(
         primaryColor: Colors.orange,
       ),
-      home: AnimatedContainerDemo(),
+      home: HomePage(),
     );
   }
 }
