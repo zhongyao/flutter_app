@@ -17,7 +17,7 @@ Future<Album> fetchAlbum() async {
 Future<Album> deleteAlbum(String id) async {
   final http.Response response = await http.delete(
     Uri.parse("https://jsonplaceholder.typicode.com/albums/$id"),
-    headers: <String, String>{
+    headers: <String, String>{// Send headers to the backend.
       'Content-Type': 'application/json; charset=UTF-8',
     },
   );
