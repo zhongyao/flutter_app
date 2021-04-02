@@ -7,6 +7,7 @@ import 'package:english_words/english_words.dart';
 import 'package:startup_namer/gesture.dart';
 import 'http/http_delete.dart';
 import 'http/http_isolate.dart';
+import 'http/http_network_update.dart';
 import 'http/web_socket.dart';
 import 'provider/home_page.dart';
 import 'provider/my_counter.dart';
@@ -22,7 +23,7 @@ import 'anim/anim.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
-void main() => runApp(IsolateApp());
+void main() => runApp(UpdateApp());
 
 // void main() => runApp(ChangeNotifierProvider<MyCounter>.value(
 //       // notifier: MyCounter(1),
