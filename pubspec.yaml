@@ -24,6 +24,10 @@ dependencies:
   flutter:
     sdk: flutter
 
+  # dependency_overrides 强制使用某个版本
+
+  # '>=5.4.0 <6.0.0' 指定一个最小和最大的版本号
+  # ^2.3.5 字符串的^2.3.5意思是“所有版本的范围从2.3.5到3.0.0，不包括3.0.0
 
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.
@@ -31,7 +35,7 @@ dependencies:
   english_words: ^3.1.5
   flutter_redux: ^0.7.0
   provider: ^5.0.0
-  http: ^0.13.1
+  http: ^0.13.1 # Good, any 0.13.x version where x >= 0 works. // '0.13.1'   # Not so good
   web_socket_channel: ^1.1.0
 #  json_annotation: ^3.0.0
 
