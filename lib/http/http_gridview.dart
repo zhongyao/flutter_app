@@ -76,6 +76,7 @@ Future<List<Photo>> fetchPhotos(http.Client client) async {
 }
 
 ///json数据解析
+///将responseBody转换成List<Photo>的数据格式
 List<Photo> parsePhotos(String responseBody) {
   final parsed = jsonDecode(responseBody).cast<Map<String, dynamic>>();
   return parsed.map<Photo>((json) => Photo.fromJson(json)).toList();
