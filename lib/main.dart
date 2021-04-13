@@ -5,6 +5,9 @@
 import 'package:flutter/material.dart';
 import 'package:english_words/english_words.dart';
 import 'package:startup_namer/gesture.dart';
+import 'package:startup_namer/state/parent_box.dart';
+import 'package:startup_namer/state/parent_box_mixed.dart';
+import 'package:startup_namer/state/tab_box_a.dart';
 import 'http/http_delete.dart';
 import 'http/http_gridview.dart';
 import 'http/http_network_update.dart';
@@ -23,7 +26,7 @@ import 'anim/anim.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
-void main() => runApp(GirdApp());
+void main() => runApp(ParentWidgetC());
 
 // void main() => runApp(ChangeNotifierProvider<MyCounter>.value(
 //       // notifier: MyCounter(1),
