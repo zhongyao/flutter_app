@@ -12,8 +12,9 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 
-/// 在写应用的过程中，取决于是否需要管理状态，
-/// 通常会创建一个新的组件继承 StatelessWidget 或 StatefulWidget。
+///  在Flutter中有句话：Everything is a Widget。
+///  在写应用的过程中，根据是否需要管理状态，
+///  通常分别会创建一个新的组件继承 StatelessWidget 或 StatefulWidget。
 class GirdApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
