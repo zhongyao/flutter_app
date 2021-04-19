@@ -3,6 +3,7 @@ import 'package:provider/provider.dart';
 import 'package:startup_namer/provider/second_page.dart';
 import 'my_counter.dart';
 
+///Flutter应用是声明式的，这也就意味着Flutter构建的用户界面就是用户的当前状态
 class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
