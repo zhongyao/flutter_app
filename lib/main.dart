@@ -26,13 +26,13 @@ import 'anim/anim.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
-// void main() => runApp(ParentWidgetC());
+void main() => runApp(GirdApp());
 
-void main() => runApp(ChangeNotifierProvider<MyCounter>.value(
-      // notifier: MyCounter(1),
-      value:  MyCounter(1),
-      child: MyApp(),
-    ));
+// void main() => runApp(ChangeNotifierProvider<MyCounter>.value(
+//       // notifier: MyCounter(1),
+//       value:  MyCounter(1),
+//       child: MyApp(),
+//     ));
 
 class MyApp extends StatelessWidget {
   @override
