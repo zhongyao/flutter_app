@@ -44,3 +44,17 @@ samples, guidance on mobile development, and a full API reference.
 #### 并且「可变的」状态会保存在继承 State 的另一个子类中。StatefulWidget 自身没有 build 方法，而在其对应的 State 对象中。
 #### 每当你更改 State 对象时（例如计数增加），你需要调用 setState() 来告知框架，再次调用 State 的构建方法来更新 UI。
  
+
+
+
+## 渲染机制
+#### 通常来说---跨平台框架都会在Android和iOS的UI底层库上创建一层抽象，该抽象层试图抹平各个系统的差异。
+#### 这时应用程序的代码常常使用解释型语言来进行编写，这些代码会与基于 Java 的 Android 和基于 Objective-C 的 iOS 系统进行交互，最终显示 UI 界面。
+#### 所有的流程都增加了显著的开销，在 UI 和应用逻辑有繁杂的交互时更为如此。
+
+#### 相比之下Flutter---通过绕过系统组件库，使用自己的Widget内容集，削减了内容层的开销。用于绘制 Flutter 图像内容的 Dart 代码被编译为机器码，并使用 Skia 进行渲染。
+
+
+
+
+
