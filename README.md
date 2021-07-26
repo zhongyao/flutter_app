@@ -89,3 +89,21 @@ samples, guidance on mobile development, and a full API reference.
 
 
 
+## Flutter调试
+
+### 如何打断点:
+#### 1、正常运行，选取断点。2、点击底部main.dart上蓝色图标【Open Flutter DevTools】3、点击AS顶部工具栏的手机图标【Flutter Attach】，即可进行断点调试。
+
+
+
+
+
+
+
+
+
+
+
+
+
+

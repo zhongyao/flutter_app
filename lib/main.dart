@@ -26,7 +26,7 @@ import 'anim/anim.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
-void main() => runApp(GirdApp());
+void main() => runApp(TapBoxA());
 
 // void main() => runApp(ChangeNotifierProvider<MyCounter>.value(
 //       // notifier: MyCounter(1),
