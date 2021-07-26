@@ -35,19 +35,19 @@ samples, guidance on mobile development, and a full API reference.
 
 
 
-## Widgets的状态
-### 无状态的Widget:
-#### 大部分 widget 都没有需要变更的状态：它们并不包含随时变化的属性（例如图标或者标签）。这些 widget 会继承 StatelessWidget。
+### Widgets的状态
+#### 无状态的Widget:
+##### 大部分 widget 都没有需要变更的状态：它们并不包含随时变化的属性（例如图标或者标签）。这些 widget 会继承 StatelessWidget。
         
-### 有状态的Widget
-#### 当 widget 拥有需要根据用户交互或其他因素而变化的特有属性，它就是 有状态的。这些 widget 会继承 StatefulWidget，
-#### 并且「可变的」状态会保存在继承 State 的另一个子类中。StatefulWidget 自身没有 build 方法，而在其对应的 State 对象中。
-#### 每当你更改 State 对象时（例如计数增加），你需要调用 setState() 来告知框架，再次调用 State 的构建方法来更新 UI。
+#### 有状态的Widget
+##### 当 widget 拥有需要根据用户交互或其他因素而变化的特有属性，它就是 有状态的。这些 widget 会继承 StatefulWidget，
+##### 并且「可变的」状态会保存在继承 State 的另一个子类中。StatefulWidget 自身没有 build 方法，而在其对应的 State 对象中。
+##### 每当你更改 State 对象时（例如计数增加），你需要调用 setState() 来告知框架，再次调用 State 的构建方法来更新 UI。
  
 
 
 
-## 渲染机制
+### 渲染机制
 #### 通常来说---跨平台框架都会在Android和iOS的UI底层库上创建一层抽象，该抽象层试图抹平各个系统的差异。
 #### 这时应用程序的代码常常使用解释型语言来进行编写，这些代码会与基于 Java 的 Android 和基于 Objective-C 的 iOS 系统进行交互，最终显示 UI 界面。
 #### 所有的流程都增加了显著的开销，在 UI 和应用逻辑有繁杂的交互时更为如此。
@@ -56,7 +56,7 @@ samples, guidance on mobile development, and a full API reference.
 
 
 
-## Flutter应用中渲染原生内容
+### Flutter应用中渲染原生内容
 #### 由于Flutter的内容绘制在单一的纹理内，并且 widget 树是完全在内部的，因此在 Flutter 的内部模型中无法存在 Android 视图之类的内容，
 #### 也无法与 Flutter 的 widget 交错渲染，对于需要在 Flutter 应用中展示原生组件（例如内置浏览器）的开发者来说，这是一个问题。
 
