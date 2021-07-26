@@ -34,7 +34,6 @@ samples, guidance on mobile development, and a full API reference.
 
 
 
-
 ### Widgets的状态
 #### 无状态的Widget:
 ##### 大部分 widget 都没有需要变更的状态：它们并不包含随时变化的属性（例如图标或者标签）。这些 widget 会继承 StatelessWidget。
@@ -56,12 +55,27 @@ samples, guidance on mobile development, and a full API reference.
 
 
 
+
 ### Flutter应用中渲染原生内容
 #### 由于Flutter的内容绘制在单一的纹理内，并且 widget 树是完全在内部的，因此在 Flutter 的内部模型中无法存在 Android 视图之类的内容，
 #### 也无法与 Flutter 的 widget 交错渲染，对于需要在 Flutter 应用中展示原生组件（例如内置浏览器）的开发者来说，这是一个问题。
 
 #### Flutter平台通过了平台 widget 【AndroidView/UiKitView】解决了这个问题，开发者可以在每一种平台上嵌入此类内容。
 #### 平台视图可以与其他的 Flutter 内容集成。这些 widget 充当了底层操作系统与 Flutter 之间的桥梁。
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
