@@ -77,7 +77,7 @@ samples, guidance on mobile development, and a full API reference.
 
 ### 积极可组合性
 #### 组合性是Flutter最出众的一个特性。widget 通过组合其他 widget 的方式进行构建，并且这些 widget 自身由更基础的 widget 构建。
-#### widget 递归构建的底层是 RenderObjectwidget，它将在渲染树的底部创建子节点。渲染树是一种存储用户界面几何信息的数据结构，
+#### widget 递归构建的底层是 RenderObjectWidget，它将在渲染树的底部创建子节点。渲染树是一种存储用户界面几何信息的数据结构，
 #### 该几何信息在 布局 期间计算并在 绘制 及 命中测试 期间使用。大多数 Flutter 开发者无需直接创建这些对象，而是使用 widget 来操纵渲染树。
 
 
