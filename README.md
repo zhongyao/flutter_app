@@ -106,7 +106,7 @@ samples, guidance on mobile development, and a full API reference.
 #####       PageScrollPhysics	PageView滚轮使用时，item都会停止在一页，不会停止在分割线位置
 #####       RangeMaintainingScrollPhysics	当内容突然改变尺寸时，试图将滚动位置保持在范围内的滚动物理
 
-#### 3、[页面跳转] (https://flutter.cn/docs/development/ui/navigation)：
+#### 3、[页面跳转](https://flutter.cn/docs/development/ui/navigation)：
 
 
 
