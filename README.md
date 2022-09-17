@@ -108,8 +108,14 @@ samples, guidance on mobile development, and a full API reference.
 
 #### 3、[页面跳转](https://flutter.cn/docs/development/ui/navigation)：
 
-
-
+##Flutter/Native互传数据：
+#### 【以下是Native传值到Flutter】
+#### 1、BaseFlutterActivity类实现provideFlutterEngine方法
+#### 2、创建FlutterEngine实例，并将routeNameJson【json数据】通过setInitialRoute赋值【对于flutter中的window.defaultRouteName】
+#### 3、通过window.defaultRouteName获取数据获取真实route数据
+#### 【以下是Flutter传值到Native】
+#### 4、通过定义的interaction_channel【举例】映射获取MethodChannel实例
+#### 5、调用以上实例的invokeMethod(...【赌赢native定义的映射方法】)方法获取Native的数据。
 
 
 

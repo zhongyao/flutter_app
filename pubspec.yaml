@@ -37,7 +37,8 @@ dependencies:
   provider: ^5.0.0
   http: ^0.13.1 # Good, any 0.13.x version where x >= 0 works. // '0.13.1'   # Not so good
   web_socket_channel: ^1.1.0
-#  json_annotation: ^3.0.0
+  json_annotation: 4.4.0
+  equatable: 2.0.3
 
 dev_dependencies:
 

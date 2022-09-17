@@ -16,7 +16,7 @@ class HomeActivity : Activity() {
     }
 
     private fun fromNativeJump2Flutter() {
-        val intent = Intent(this, MainActivity::class.java)
+        val intent = Intent(this, MainFlutterActivity::class.java)
         intent.putExtra("name", "yao")
         intent.putExtra("age", 18)
         startActivity(intent)

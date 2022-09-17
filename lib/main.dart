@@ -2,9 +2,16 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
+import 'dart:async';
+import 'dart:convert';
+import 'dart:ui';
+// import 'dart:html';
+
 import 'package:flutter/material.dart';
 import 'package:english_words/english_words.dart';
 import 'package:startup_namer/gesture.dart';
+import 'package:startup_namer/platform/channel.dart';
+import 'package:startup_namer/platform/platform_config.dart';
 import 'package:startup_namer/state/parent_box.dart';
 import 'package:startup_namer/state/parent_box_mixed.dart';
 import 'package:startup_namer/state/tab_box_a.dart';
@@ -27,7 +34,35 @@ import 'anim/anim.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
-void main() => runApp(ViewPager());
+Future<void> main() async {
+  FlutterError.onError = (FlutterErrorDetails details) async {
+    FlutterError.dumpErrorToConsole(details);
+  };
+  runZonedGuarded<Future<void>>(() async {
+    WidgetsFlutterBinding.ensureInitialized();
+    PlatformConfig config = parseRouteConfig(window.defaultRouteName);
+    await loadPlatformInitData(config);
+    runApp(ViewPager());
+  }, (error, stackTrace) async {
+
+  });
+}
+
+loadPlatformInitData(PlatformConfig config) async {
+  if("route_name_main_flutter" == config.route_name) {
+    await Channel().initChannel();
+  }
+
+}
+
+PlatformConfig parseRouteConfig(String route) {
+  debugPrint('route = ' + route);
+  final parseJson = json.decode(route);
+  var config = PlatformConfig.fromJson(parseJson);
+  return config;
+}
+
+// void main() => runApp(ViewPager());
 
 // void main() => runApp(ChangeNotifierProvider<MyCounter>.value(
 //       // notifier: MyCounter(1),
