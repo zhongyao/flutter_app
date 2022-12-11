@@ -12,13 +12,13 @@ class HomePage extends StatelessWidget {
         title: Text("Home"),
         actions: <Widget>[
           // ignore: deprecated_member_use
-          FlatButton(
-            child: Text("下一页"),
-            onPressed: () =>
-                Navigator.push(context, MaterialPageRoute(builder: (context) {
-              return SecondPage();
-            })),
-          ),
+          // FlatButton(
+          //   child: Text("下一页"),
+          //   onPressed: () =>
+          //       Navigator.push(context, MaterialPageRoute(builder: (context) {
+          //     return SecondPage();
+          //   })),
+          // ),
         ],
       ),
       body: Center(
