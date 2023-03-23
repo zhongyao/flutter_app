@@ -24,15 +24,98 @@ class RandomWords extends StatefulWidget {
   _RandomWordsState createState() => _RandomWordsState();
 }
 
-class _RandomWordsState extends State<RandomWords> {
+class _RandomWordsState extends State<RandomWords> with WidgetsBindingObserver {
   final _suggestions = <WordPair>[];
   final Set<WordPair> _saved = new Set<WordPair>();
   final _biggerFont = TextStyle(fontSize: 18.0);
 
+  /**
+   * 插入渲染树时调用，只调用一次
+   */
+  @override
+  void initState() {
+    super.initState();
+    print('调用了 + initState');
+
+    WidgetsBinding.instance.addObserver(this);
+
+    /**
+     * 帧绘制回调:
+     * 1、addPostFrameCallback：
+     *    指单次 Frame 绘制回调
+     * 2、addPersistentFrameCallback：
+     *    指实时 Frame 绘制回调
+     */
+
+    WidgetsBinding.instance.addPostFrameCallback((_) {
+      print(" 单次 Frame 绘制回调 ");// 只回调一次
+    });
+
+    WidgetsBinding.instance.addPersistentFrameCallback((_){
+      print(" 实时 Frame 绘制回调 ");// 每帧都回调
+    });
+  }
+
+  /**
+   * 初始化时，在initState()之后立刻调用,当依赖的InheritedWidget rebuild,会触发此接口被调用,
+   * 实测在组件可见状态变化的时候会调用
+   */
+  @override
+  void didChangeDependencies() {
+    super.didChangeDependencies();
+    print('调用了 + didChangeDependencies');
+  }
+
+  /**
+   * 组件状态改变时候调用
+   */
+  @override
+  void didUpdateWidget(covariant RandomWords oldWidget) {
+    super.didUpdateWidget(oldWidget);
+    print('调用了 + didUpdateWidget');
+  }
+
+  /**
+   * 热重载时被调用，在release模式下永不会调用
+   */
+  @override
+  void reassemble() {
+    super.reassemble();
+    print('调用了 + reassemble');
+  }
+
+  /**
+   * 当State对象从树中被移除时，会调用此回调，会在dispose之前调用。
+   */
+  @override
+  void deactivate() {
+    super.deactivate();
+    print('调用了 + deactivate');
+  }
+
+  /**
+   * 当State对象从树中被永久移除时调用；通常在此回调中释放资源。
+   */
+  @override
+  void dispose() {
+    super.dispose();
+    print('调用了 + dispose');
+  }
+
+  @override
+  void didChangeAppLifecycleState(AppLifecycleState state) {
+    super.didChangeAppLifecycleState(state);
+    print('当前state为：$state');
+  }
+
+  /**
+   * 初始化之后开始绘制界面，setState触发的时候会
+   */
   @override
   Widget build(BuildContext context) {
     // final wordPair = WordPair.random();
     // return Text(wordPair.asPascalCase);
+    print('调用了 + build');
     return Scaffold(
       appBar: AppBar(
         title: Text('Startup Name Generator'),
