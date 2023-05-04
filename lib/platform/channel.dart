@@ -8,6 +8,10 @@ class Channel {
   static const MethodChannel interactionChannel =
       const MethodChannel('interaction_channel');
 
+  //flutter端创建一个BasicMessageChannel通道
+  static var basicChannel = const BasicMessageChannel(
+      "interaction_basic_message_channel", StandardMessageCodec());
+
   factory Channel() {
     return _singleton;
   }
@@ -16,7 +20,6 @@ class Channel {
 
   initChannel() async {
     try {
-
       /**
        * 【MethodChannel】Native --> Flutter
        */
@@ -40,5 +43,32 @@ class Channel {
     } catch (e) {
       print(e);
     }
+  }
+
+  initBasicMessageChannel() async {
+    /**
+     * 【BasicMessageChannel】Native --> Flutter
+     */
+    basicChannel.setMessageHandler((message) async {
+      debugPrint('message：$message');
+      return null;
+    });
+
+    /**
+     * 【BasicMessageChannel】Flutter --> Native[且有数据返回]
+     */
+    String result = await basicChannel.send({'name': 'azy', 'age': 19});
+    debugPrint('result:$result');
+  }
+
+  initEventChannel() async {
+    var eventChannel = const EventChannel("interaction_event_channel");
+    eventChannel.receiveBroadcastStream().listen((event) {
+      print("event " + event.toString());
+    }, onDone: () {
+      print("done");
+    }, onError: (object) {
+      print("on error $object");
+    });
   }
 }
