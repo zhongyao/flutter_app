@@ -16,6 +16,22 @@ class Channel {
 
   initChannel() async {
     try {
+
+      /**
+       * 【MethodChannel】Native --> Flutter
+       */
+      interactionChannel.setMethodCallHandler((call) {
+        debugPrint("flutter -- setMethodCallHandler回调");
+        if (call.method == "interaction_method_one_flutter") {
+          var nativeData = call.arguments["invoke_name"];
+          debugPrint("invoke_name $nativeData");
+        }
+        return null;
+      });
+
+      /**
+       * 【MethodChannel】Flutter --> Native
+       */
       String data =
           await interactionChannel.invokeMethod("interaction_method_one");
       debugPrint('data:$data');

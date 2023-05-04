@@ -115,7 +115,7 @@ samples, guidance on mobile development, and a full API reference.
 #### 3、通过window.defaultRouteName获取数据获取真实route数据
 #### 【以下是Flutter传值到Native】
 #### 4、通过定义的interaction_channel【举例】映射获取MethodChannel实例
-#### 5、调用以上实例的invokeMethod(...【赌赢native定义的映射方法】)方法获取Native的数据。
+#### 5、调用以上实例的invokeMethod(...【对应native定义的映射方法】)方法获取Native的数据。
 
 
 

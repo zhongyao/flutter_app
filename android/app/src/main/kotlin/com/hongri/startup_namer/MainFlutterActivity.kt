@@ -7,21 +7,26 @@ import com.hongri.startup_namer.info.PersonInfo
 import io.flutter.embedding.engine.FlutterEngine
 import io.flutter.plugin.common.MethodCall
 import io.flutter.plugin.common.MethodChannel
+import kotlinx.android.synthetic.main.activity_main_flutter.mcNative2Flutter
+import java.util.Timer
+import kotlin.concurrent.timerTask
 
 class MainFlutterActivity : BaseFlutterActivity() {
     private var name: String? = ""
     private var age: Int? = 0
 
     companion object {
-        const val TAG = "MainFlutterActivity";
+        const val TAG = "yao";
         const val INTERACTION_CHANNEL = "interaction_channel"
         const val INTERACTION_METHOD_ONE = "interaction_method_one"
+        const val INTERACTION_METHOD_ONE_FLUTTER = "interaction_method_one_flutter"
         const val INTERACTION_METHOD_TWO = "interaction_method_two"
         const val ROUTE_NAME_MAIN_FLUTTER = "route_name_main_flutter"
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        setContentView(R.layout.activity_main_flutter)
 
         val intent = intent
         name = intent?.getStringExtra("name")
@@ -38,10 +43,26 @@ class MainFlutterActivity : BaseFlutterActivity() {
      */
     override fun configureFlutterEngine(flutterEngine: FlutterEngine) {
         super.configureFlutterEngine(flutterEngine)
-        var methodChannel = MethodChannel(flutterEngine.dartExecutor, INTERACTION_CHANNEL)
+        var methodChannel = MethodChannel(flutterEngine.dartExecutor.binaryMessenger, INTERACTION_CHANNEL)
+
+        /**
+         * 【MethodChannel】Flutter --> Native
+         */
         methodChannel.setMethodCallHandler { methodCall: MethodCall, result: MethodChannel.Result ->
             onMethodRealCall(methodCall, result)
         }
+
+        /**
+         * 【MethodChannel】Native --> Flutter
+         */
+        Timer().schedule(timerTask {
+            activity.runOnUiThread {
+                var map = mapOf("invoke_name" to "【MethodChannel】native --> flutter")
+                methodChannel.invokeMethod(INTERACTION_METHOD_ONE_FLUTTER, map)
+
+                Log.d(TAG, "native --> flutter:$INTERACTION_METHOD_ONE_FLUTTER")
+            }
+        },2000,3000)
     }
 
     private fun onMethodRealCall(methodCall: MethodCall, result: MethodChannel.Result) {

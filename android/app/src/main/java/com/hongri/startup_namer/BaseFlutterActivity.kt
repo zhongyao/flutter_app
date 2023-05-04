@@ -12,7 +12,7 @@ import io.flutter.embedding.engine.dart.DartExecutor
 abstract class BaseFlutterActivity : FlutterActivity() {
 
     companion object {
-        const val TAG = "BaseFlutterActivity"
+        const val TAG = "yao"
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
