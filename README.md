@@ -108,7 +108,7 @@ samples, guidance on mobile development, and a full API reference.
 
 #### 3、[页面跳转](https://flutter.cn/docs/development/ui/navigation)：
 
-##Flutter/Native通信：
+## Flutter/Native通信：
 #### 【以下是Native传值到Flutter】
 #### 1、BaseFlutterActivity类实现provideFlutterEngine方法
 #### 2、创建FlutterEngine实例，并将routeNameJson【json数据】通过setInitialRoute赋值【对于flutter中的window.defaultRouteName】
@@ -119,6 +119,13 @@ samples, guidance on mobile development, and a full API reference.
 #### [Flutter与Android通信的三种方式](https://www.jianshu.com/p/331cf2742cc6)
 
 
-
+## Flutter页面间数据传递(共享)的几种方式：
+#### 一、通过构造器的方式传递参数
+#### 二、返回上一个页面是携带数据（Navigator.pop）
+#### 三、InheritedWidget方式
+#### 四、全局的提供数据的方式[与三类似]
+#### 五、通过全局单例模式来使用
+#### 六、全局单例结合Stream的方式传递数据
+#### [参考](https://segmentfault.com/a/1190000020007938)
 
 

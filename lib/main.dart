@@ -16,6 +16,7 @@ import 'package:startup_namer/state/parent_box.dart';
 import 'package:startup_namer/state/parent_box_mixed.dart';
 import 'package:startup_namer/state/tab_box_a.dart';
 import 'package:startup_namer/ui/view_pager.dart';
+import 'datatransfer/navigation_page.dart';
 import 'http/http_delete.dart';
 import 'http/http_gridview.dart';
 import 'http/http_network_update.dart';
@@ -34,19 +35,19 @@ import 'anim/anim.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
-Future<void> main() async {
-  FlutterError.onError = (FlutterErrorDetails details) async {
-    FlutterError.dumpErrorToConsole(details);
-  };
-  runZonedGuarded<Future<void>>(() async {
-    WidgetsFlutterBinding.ensureInitialized();
-    PlatformConfig config = parseRouteConfig(window.defaultRouteName);
-    await loadPlatformInitData(config);
-    runApp(ViewPager());
-  }, (error, stackTrace) async {
-
-  });
-}
+// Future<void> main() async {
+//   FlutterError.onError = (FlutterErrorDetails details) async {
+//     FlutterError.dumpErrorToConsole(details);
+//   };
+//   runZonedGuarded<Future<void>>(() async {
+//     WidgetsFlutterBinding.ensureInitialized();
+//     PlatformConfig config = parseRouteConfig(window.defaultRouteName);
+//     await loadPlatformInitData(config);
+//     runApp(ViewPager());
+//   }, (error, stackTrace) async {
+//
+//   });
+// }
 
 loadPlatformInitData(PlatformConfig config) async {
   if("route_name_main_flutter" == config.route_name) {
@@ -62,7 +63,10 @@ PlatformConfig parseRouteConfig(String route) {
   return config;
 }
 
-// void main() => runApp(ViewPager());
+void main() {
+  runApp(NavigationPage());
+  print('===main====');
+}
 
 // void main() => runApp(ChangeNotifierProvider<MyCounter>.value(
 //       // notifier: MyCounter(1),

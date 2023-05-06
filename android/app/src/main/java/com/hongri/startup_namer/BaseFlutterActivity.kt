@@ -17,7 +17,7 @@ abstract class BaseFlutterActivity : FlutterActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_base_flutter)
+//        setContentView(R.layout.activity_base_flutter)
     }
 
     override fun provideFlutterEngine(context: Context): FlutterEngine? {

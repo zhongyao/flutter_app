@@ -40,7 +40,7 @@ class MainFlutterActivity : BaseFlutterActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main_flutter)
+//        setContentView(R.layout.activity_main_flutter)
 
         val intent = intent
         name = intent?.getStringExtra("name")
