@@ -39,7 +39,7 @@ dependencies:
   web_socket_channel: ^2.2.0
   json_annotation: any
   equatable: ^2.0.5
-  webview_flutter: 0.3.19+9
+#  webview_flutter: 0.3.19+9
 
 dev_dependencies:
 

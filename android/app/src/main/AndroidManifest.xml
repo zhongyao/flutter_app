@@ -7,8 +7,12 @@
     <application
         android:icon="@mipmap/ic_launcher"
         android:label="startup_namer">
-        <activity android:name=".BaseFlutterActivity"></activity>
-        <activity android:name=".HomeActivity">
+        <activity
+            android:name=".BaseFlutterActivity"
+            android:exported="true" />
+        <activity
+            android:name=".HomeActivity"
+            android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -21,6 +25,7 @@
             android:hardwareAccelerated="true"
             android:launchMode="singleTop"
             android:theme="@style/LaunchTheme"
+            android:exported="true"
             android:windowSoftInputMode="adjustResize">
 
             <!--
