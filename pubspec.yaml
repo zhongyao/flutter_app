@@ -19,11 +19,11 @@ version: 1.0.0+1
 
 environment:
   sdk: ">=2.10.0 <3.0.0"
+  flutter: ">=2.5.0"
 
 dependencies:
   flutter:
     sdk: flutter
-
   # dependency_overrides 强制使用某个版本
 
   # '>=5.4.0 <6.0.0' 指定一个最小和最大的版本号
@@ -39,12 +39,13 @@ dependencies:
   web_socket_channel: ^2.2.0
   json_annotation: any
   equatable: ^2.0.5
+  flutter_screenutil: ^5.7.0
 #  webview_flutter: 0.3.19+9
 
 dev_dependencies:
 
-#  build_runner: ^1.0.0
-#  json_serializable: ^3.2.0
+  #  build_runner: ^1.0.0
+  #  json_serializable: ^3.2.0
 
   flutter_test:
     sdk: flutter
@@ -59,7 +60,7 @@ flutter:
   # included with your application, so that you can use the icons in
   # the material Icons class.
   uses-material-design: true
-  assets: [images/]
+  assets: [ images/ ]
 
   # To add assets to your application, add an assets section, like this:
   # assets:
