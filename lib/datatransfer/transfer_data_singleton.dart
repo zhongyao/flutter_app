@@ -1,4 +1,3 @@
-import 'package:flutter/cupertino.dart';
 import 'package:startup_namer/datatransfer/transfer_data_entity.dart';
 
 class TransferDataSingleton {

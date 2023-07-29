@@ -1,4 +1,3 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:startup_namer/datatransfer/transfer_data_entity.dart';
 

@@ -3,11 +3,7 @@ import 'package:flutter/material.dart';
 class ViewPager extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      title: "ViewPager",
-      theme: ThemeData(primaryColor: Colors.blue),
-      home: ViewPagerStateless(),
-    );
+    return ViewPagerStateless();
   }
 }
 

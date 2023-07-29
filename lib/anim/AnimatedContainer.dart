@@ -15,7 +15,10 @@ Color randomColor() {
 }
 
 class AnimatedContainerDemo extends StatefulWidget {
-  _AnimatedContainerDemoState createState() => _AnimatedContainerDemoState();
+  const AnimatedContainerDemo({Key key}) : super(key: key);
+
+  @override
+  State<AnimatedContainerDemo> createState() => _AnimatedContainerDemoState();
 }
 
 class _AnimatedContainerDemoState extends State<AnimatedContainerDemo> {
@@ -65,15 +68,5 @@ class _AnimatedContainerDemoState extends State<AnimatedContainerDemo> {
       borderRadius = randomBorderRadius();
       margin = randomMargin();
     });
-  }
-}
-
-class MyApp extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      home: AnimatedContainerDemo(),
-    );
   }
 }

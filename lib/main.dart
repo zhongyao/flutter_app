@@ -2,58 +2,30 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import 'dart:async';
 import 'dart:convert';
 import 'dart:ui';
 // import 'dart:html';
 
 import 'package:flutter/material.dart';
-import 'package:english_words/english_words.dart';
-import 'package:startup_namer/gesture.dart';
+import 'package:flutter_localizations/flutter_localizations.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:provider/provider.dart';
+import 'package:startup_namer/page/entrance_page.dart';
 import 'package:startup_namer/platform/channel.dart';
 import 'package:startup_namer/platform/platform_config.dart';
-import 'package:startup_namer/state/parent_box.dart';
-import 'package:startup_namer/state/parent_box_mixed.dart';
-import 'package:startup_namer/state/tab_box_a.dart';
-import 'package:startup_namer/ui/view_pager.dart';
-import 'datatransfer/navigation_page.dart';
-import 'http/http_delete.dart';
-import 'http/http_gridview.dart';
-import 'http/http_network_update.dart';
-import 'http/web_socket.dart';
-import 'provider/home_page.dart';
-import 'provider/my_counter.dart';
-import 'package:startup_namer/shopping_list.dart';
-import 'package:startup_namer/grid_and_list.dart';
-import 'package:startup_namer/stack.dart';
+import 'package:startup_namer/provider/theme_provider.dart';
+import 'package:startup_namer/router/page_route.dart';
+import 'package:startup_namer/util/router.dart';
 
-import 'package:startup_namer/interact.dart';
-
-import 'anim/AnimatedContainer.dart';
-import 'anim/ImplicitlyAnim.dart';
-import 'anim/anim.dart';
-import 'package:flutter/material.dart';
-import 'package:provider/provider.dart';
-
-// Future<void> main() async {
-//   FlutterError.onError = (FlutterErrorDetails details) async {
-//     FlutterError.dumpErrorToConsole(details);
-//   };
-//   runZonedGuarded<Future<void>>(() async {
-//     WidgetsFlutterBinding.ensureInitialized();
-//     PlatformConfig config = parseRouteConfig(window.defaultRouteName);
-//     await loadPlatformInitData(config);
-//     runApp(ViewPager());
-//   }, (error, stackTrace) async {
-//
-//   });
-// }
+void main() {
+  runApp(MyApp());
+  print('====main====');
+}
 
 loadPlatformInitData(PlatformConfig config) async {
-  if("route_name_main_flutter" == config.route_name) {
+  if ("route_name_main_flutter" == config.route_name) {
     await Channel().initChannel();
   }
-
 }
 
 PlatformConfig parseRouteConfig(String route) {
@@ -63,26 +35,71 @@ PlatformConfig parseRouteConfig(String route) {
   return config;
 }
 
-void main() {
-  runApp(NavigationPage());
-  print('===main====');
-}
-
-// void main() => runApp(ChangeNotifierProvider<MyCounter>.value(
-//       // notifier: MyCounter(1),
-//       value:  MyCounter(1),
-//       child: MyApp(),
-//     ));
-
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Provider',
-      theme: new ThemeData(
-        primaryColor: Colors.orange,
-      ),
-      home: HomePage(),
-    );
+    //屏幕适配：https://github.com/OpenFlutter/flutter_screenutil/blob/master/README_CN.md
+    return ScreenUtilInit(
+        designSize: const Size(414, 896),
+        //是否根据宽度/高度中的最小值适配文字
+        minTextAdapt: true,
+        //支持分屏尺寸
+        splitScreenMode: true,
+        builder: (context, child) {
+          return FutureBuilder(
+              future: init(),
+              builder: (context, snapshot) => MultiProvider(
+                      providers: [
+                        ChangeNotifierProvider(create: (BuildContext context) {
+                          ThemeProvider.instance.setDark(false);
+                          return ThemeProvider.instance;
+                        })
+                      ],
+                      child: Consumer<ThemeProvider>(builder:
+                          (BuildContext context, ThemeProvider themeProvider,
+                              Widget child) {
+                        return MaterialApp(
+                          debugShowCheckedModeBanner: true,
+                          initialRoute: RouterPath.entrancePage,
+                          localizationsDelegates: const [
+                            GlobalMaterialLocalizations.delegate,
+                            GlobalWidgetsLocalizations.delegate,
+                            GlobalCupertinoLocalizations.delegate,
+                          ],
+                          supportedLocales: const [
+                            Locale('en'), // English
+                            Locale('es'), // Spanish
+                          ],
+                          onGenerateRoute: (RouteSettings settings) {
+                            final Map<String, WidgetBuilder> routers =
+                                getRouters();
+                            final WidgetBuilder builder =
+                                routers[settings.name];
+                            if (builder != null) {
+                              return PageRouter(
+                                  settings: settings, child: builder(context));
+                            }
+                            return null;
+                          },
+                          theme: ThemeData(
+                            primaryColor: Colors.orange,
+                          ),
+                          home: child,
+                          themeMode: themeProvider.getThemeMode(),
+                        );
+                      })));
+        });
+  }
+
+  init() {
+    //初始化
+  }
+
+  ///各页面的路由
+  Map<String, WidgetBuilder> getRouters() {
+    Map<String, WidgetBuilder> routers = {
+      RouterPath.entrancePage: (context) => const EntrancePage()
+    };
+    return routers;
   }
 }

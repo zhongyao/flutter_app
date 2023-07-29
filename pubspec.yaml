@@ -24,6 +24,8 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
+  flutter_localizations:
+    sdk: flutter
   # dependency_overrides 强制使用某个版本
 
   # '>=5.4.0 <6.0.0' 指定一个最小和最大的版本号
@@ -31,6 +33,7 @@ dependencies:
 
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.
+  intl: ^0.17.0
   cupertino_icons: ^1.0.5
   english_words: ^4.0.0
   flutter_redux: ^0.10.0
@@ -50,6 +53,7 @@ dev_dependencies:
   flutter_test:
     sdk: flutter
 
+  flutter_lints: ^2.0.1
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec
 

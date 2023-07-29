@@ -8,6 +8,7 @@
 // 这意味着你需要在不同的线程中进行调度工作。而在 Flutter 中，你可以使用一个单独的 Isolate。
 import 'dart:async';
 import 'dart:convert';
+
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
@@ -18,14 +19,8 @@ import 'package:http/http.dart' as http;
 class GirdApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    final appTitle = 'GridView Demo';
-    return MaterialApp(
-      title: appTitle,
-      theme: ThemeData(
-        primarySwatch: Colors.red,
-      ),
-      home: MyHomePage(title: appTitle),
-    );
+    const appTitle = 'GridView Demo';
+    return MyHomePage(title: appTitle);
   }
 }
 

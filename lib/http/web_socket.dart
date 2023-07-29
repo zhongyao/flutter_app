@@ -1,20 +1,14 @@
-import 'package:flutter/foundation.dart';
-import 'package:web_socket_channel/io.dart';
 import 'package:flutter/material.dart';
+import 'package:web_socket_channel/io.dart';
 import 'package:web_socket_channel/web_socket_channel.dart';
-
 
 class WebSocketApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final title = 'WebSocket Demo';
-    return MaterialApp(
-      title: title,
-      home: MyHomePage(
+    return MyHomePage(
         title: title,
-        channel: IOWebSocketChannel.connect('wss://echo.websocket.org'),
-      ),
-    );
+        channel: IOWebSocketChannel.connect('wss://echo.websocket.org'));
   }
 }
 

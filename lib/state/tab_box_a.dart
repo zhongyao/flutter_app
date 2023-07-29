@@ -1,5 +1,6 @@
-import 'package:flutter/material.dart';
 import 'dart:developer' as developer;
+
+import 'package:flutter/material.dart';
 
 ///TapBoxA管理自身状态
 class TapBoxA extends StatefulWidget {
