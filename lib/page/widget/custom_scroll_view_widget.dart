@@ -1,6 +1,8 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
+import '../delegate/sliver_header_delegate.dart';
+
 ///CustomScrollView示例
 ///reference:https://book.flutterchina.club/chapter6/custom_scrollview.html
 class CustomScrollViewWidget extends StatefulWidget {
@@ -62,6 +64,14 @@ class _CustomScrollViewWidgetState extends State<CustomScrollViewWidget> {
             ),
           ),
         ),
+        SliverPersistentHeader(
+          pinned: true,
+          delegate: SliverHeaderDelegate(//有最大和最小高度
+            maxHeight: 80,
+            minHeight: 50,
+            child: buildHeader(1),
+          ),
+        ),
         SliverPadding(
             padding: const EdgeInsets.all(8.0),
             sliver: SliverGrid(
@@ -97,6 +107,15 @@ class _CustomScrollViewWidgetState extends State<CustomScrollViewWidget> {
             ),
             itemExtent: 50),
       ],
+    );
+  }
+
+  // 构建 header
+  Widget buildHeader(int i) {
+    return Container(
+      color: Colors.lightBlue.shade200,
+      alignment: Alignment.centerLeft,
+      child: Text("PersistentHeader $i"),
     );
   }
 }
