@@ -52,6 +52,16 @@ class _CustomScrollViewWidgetState extends State<CustomScrollViewWidget> {
             background: Image.asset("images/pic12.jpg", fit: BoxFit.cover),
           ),
         ),
+        //在实际布局中，我们通常需要往 CustomScrollView 中添加一些自定义的组件，而这些组件并非都有 Sliver 版本，
+        // 为此 Flutter 提供了一个 SliverToBoxAdapter 组件，它是一个适配器：可以将 RenderBox 适配为 Sliver。
+        SliverToBoxAdapter(
+          child: SizedBox(
+            height: 300,
+            child: PageView(
+              children: const [Text("page1"), Text("page2")],
+            ),
+          ),
+        ),
         SliverPadding(
             padding: const EdgeInsets.all(8.0),
             sliver: SliverGrid(
@@ -85,7 +95,7 @@ class _CustomScrollViewWidgetState extends State<CustomScrollViewWidget> {
               },
               childCount: 20,
             ),
-            itemExtent: 50)
+            itemExtent: 50),
       ],
     );
   }
