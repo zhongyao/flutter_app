@@ -1,10 +1,4 @@
-// Copyright 2018 The Flutter team. All rights reserved.
-// Use of this source code is governed by a BSD-style license that can be
-// found in the LICENSE file.
-
 import 'dart:convert';
-import 'dart:ui';
-// import 'dart:html';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
@@ -15,11 +9,12 @@ import 'package:startup_namer/platform/channel.dart';
 import 'package:startup_namer/platform/platform_config.dart';
 import 'package:startup_namer/provider/theme_provider.dart';
 import 'package:startup_namer/router/page_route.dart';
+import 'package:startup_namer/util/print_util.dart';
 import 'package:startup_namer/util/router.dart';
 
 void main() {
-  runApp(MyApp());
-  print('====main====');
+  runApp(const MyApp());
+  PrintUtil.print('main函数');
 }
 
 loadPlatformInitData(PlatformConfig config) async {
@@ -29,13 +24,15 @@ loadPlatformInitData(PlatformConfig config) async {
 }
 
 PlatformConfig parseRouteConfig(String route) {
-  debugPrint('route = ' + route);
+  PrintUtil.print('route = $route');
   final parseJson = json.decode(route);
   var config = PlatformConfig.fromJson(parseJson);
   return config;
 }
 
 class MyApp extends StatelessWidget {
+  const MyApp({Key key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     //屏幕适配：https://github.com/OpenFlutter/flutter_screenutil/blob/master/README_CN.md
