@@ -5,6 +5,7 @@ import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:provider/provider.dart';
 import 'package:startup_namer/page/entrance_page.dart';
+import 'package:startup_namer/page/scroll_page.dart';
 import 'package:startup_namer/platform/channel.dart';
 import 'package:startup_namer/platform/platform_config.dart';
 import 'package:startup_namer/provider/theme_provider.dart';
@@ -57,7 +58,8 @@ class MyApp extends StatelessWidget {
                               Widget child) {
                         return MaterialApp(
                           debugShowCheckedModeBanner: true,
-                          initialRoute: RouterPath.entrancePage,
+                          //切换入口
+                          initialRoute: RouterPath.scrollPage,
                           localizationsDelegates: const [
                             GlobalMaterialLocalizations.delegate,
                             GlobalWidgetsLocalizations.delegate,
@@ -95,7 +97,8 @@ class MyApp extends StatelessWidget {
   ///各页面的路由
   Map<String, WidgetBuilder> getRouters() {
     Map<String, WidgetBuilder> routers = {
-      RouterPath.entrancePage: (context) => const EntrancePage()
+      RouterPath.entrancePage: (context) => const EntrancePage(),
+      RouterPath.scrollPage: (context) => const ScrollPage()
     };
     return routers;
   }

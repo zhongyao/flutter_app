@@ -1,0 +1,92 @@
+import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
+
+///CustomScrollView示例
+///reference:https://book.flutterchina.club/chapter6/custom_scrollview.html
+class CustomScrollViewWidget extends StatefulWidget {
+  const CustomScrollViewWidget({Key key}) : super(key: key);
+
+  @override
+  State<StatefulWidget> createState() {
+    return _CustomScrollViewWidgetState();
+  }
+}
+
+class _CustomScrollViewWidgetState extends State<CustomScrollViewWidget> {
+  @override
+  Widget build(BuildContext context) {
+    // return Material(child: buildTwoSliverList());
+    return Material(child: buildAppBarSliverList());
+  }
+
+  Widget buildTwoSliverList() {
+    // SliverFixedExtentList 是一个 Sliver，它可以生成高度相同的列表项。
+    // 再次提醒，如果列表项高度相同，我们应该优先使用SliverFixedExtentList
+    // 和 SliverPrototypeExtentList，如果不同，使用 SliverList.
+    var listView = SliverFixedExtentList(
+      itemExtent: 56, //列表项高度固定
+      delegate: SliverChildBuilderDelegate(
+        (_, index) => ListTile(title: Text('$index')),
+        childCount: 10,
+      ),
+    );
+    // 使用
+    return CustomScrollView(
+      slivers: [
+        listView,
+        listView,
+      ],
+    );
+  }
+
+  ///多个Sliver Widget组合
+  Widget buildAppBarSliverList() {
+    return CustomScrollView(
+      slivers: <Widget>[
+        //AppBar,包含一个导航栏
+        SliverAppBar(
+          pinned: true, // 滑动到顶端时会固定住
+          expandedHeight: 200.0,
+          flexibleSpace: FlexibleSpaceBar(
+            title: const Text("CustomScrollView示例"),
+            background: Image.asset("images/pic12.jpg", fit: BoxFit.cover),
+          ),
+        ),
+        SliverPadding(
+            padding: const EdgeInsets.all(8.0),
+            sliver: SliverGrid(
+                //Grid
+                gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+                  crossAxisCount: 2, //Grid按两列显示
+                  mainAxisSpacing: 10.0,
+                  crossAxisSpacing: 10.0,
+                  childAspectRatio: 4.0,
+                ),
+                delegate: SliverChildBuilderDelegate(
+                  (BuildContext context, int index) {
+                    //创建子widget
+                    return Container(
+                      alignment: Alignment.center,
+                      color: Colors.cyan[100 * (index % 9)],
+                      child: Text('grid item $index'),
+                    );
+                  },
+                  childCount: 20,
+                ))),
+        SliverFixedExtentList(
+            delegate: SliverChildBuilderDelegate(
+              (BuildContext context, int index) {
+                return Container(
+                  //创建列表项
+                  alignment: Alignment.center,
+                  color: Colors.lightBlue[100 * (index % 9)],
+                  child: Text('list item $index'),
+                );
+              },
+              childCount: 20,
+            ),
+            itemExtent: 50)
+      ],
+    );
+  }
+}
