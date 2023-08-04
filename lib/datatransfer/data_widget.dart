@@ -4,7 +4,7 @@ import 'package:startup_namer/datatransfer/data_provider.dart';
 class IDataWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    final data = IDataProvider.of(context).data;
+    final data = IDataProvider.of(context)?.data;
     return Scaffold(
       appBar: AppBar(
         title: Text("Inherited方式传递数据"),
@@ -14,17 +14,17 @@ class IDataWidget extends StatelessWidget {
           Container(
             alignment: Alignment.center,
             height: 40.0,
-            child: Text(data.name),
+            child: Text("${data?.name}"),
           ),
           Container(
             alignment: Alignment.center,
             height: 40.0,
-            child: Text(data.id),
+            child: Text("${data?.id}"),
           ),
           Container(
             alignment: Alignment.center,
             height: 40.0,
-            child: Text("${data.age}"),
+            child: Text("${data?.age}"),
           ),
           IDataChildWidget()
         ],
@@ -36,9 +36,9 @@ class IDataWidget extends StatelessWidget {
 class IDataChildWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    final data = IDataProvider.of(context).data;
+    final data = IDataProvider.of(context)?.data;
     return Container(
-      child: Text(data.name),
+      child: Text("${data?.name}"),
     );
   }
 }

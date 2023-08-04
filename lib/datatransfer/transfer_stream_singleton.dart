@@ -10,11 +10,11 @@ import 'package:startup_namer/datatransfer/transfer_data_entity.dart';
 class TransferStreamSingleton {
   static final TransferStreamSingleton _instance =
       TransferStreamSingleton.__internal();
-  StreamController streamController;
+  StreamController? streamController;
 
   void setTransferData(TransferDataEntity transData) {
     streamController = StreamController<TransferDataEntity>();
-    streamController.sink.add(transData);
+    streamController?.sink.add(transData);
   }
 
   factory TransferStreamSingleton() {

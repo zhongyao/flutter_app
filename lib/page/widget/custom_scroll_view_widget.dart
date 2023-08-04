@@ -1,4 +1,3 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 import '../delegate/sliver_header_delegate.dart';
@@ -6,7 +5,7 @@ import '../delegate/sliver_header_delegate.dart';
 ///CustomScrollView示例
 ///reference:https://book.flutterchina.club/chapter6/custom_scrollview.html
 class CustomScrollViewWidget extends StatefulWidget {
-  const CustomScrollViewWidget({Key key}) : super(key: key);
+  const CustomScrollViewWidget({Key? key}) : super(key: key);
 
   @override
   State<StatefulWidget> createState() {
@@ -66,7 +65,8 @@ class _CustomScrollViewWidgetState extends State<CustomScrollViewWidget> {
         ),
         SliverPersistentHeader(
           pinned: true,
-          delegate: SliverHeaderDelegate(//有最大和最小高度
+          delegate: SliverHeaderDelegate(
+            //有最大和最小高度
             maxHeight: 80,
             minHeight: 50,
             child: buildHeader(1),

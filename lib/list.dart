@@ -8,7 +8,7 @@ import 'package:flutter/material.dart';
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return  RandomWords();
+    return RandomWords();
   }
 }
 
@@ -41,11 +41,11 @@ class _RandomWordsState extends State<RandomWords> with WidgetsBindingObserver {
      */
 
     WidgetsBinding.instance.addPostFrameCallback((_) {
-      print(" 单次 Frame 绘制回调 ");// 只回调一次
+      print(" 单次 Frame 绘制回调 "); // 只回调一次
     });
 
-    WidgetsBinding.instance.addPersistentFrameCallback((_){
-      print(" 实时 Frame 绘制回调 ");// 每帧都回调
+    WidgetsBinding.instance.addPersistentFrameCallback((_) {
+      print(" 实时 Frame 绘制回调 "); // 每帧都回调
     });
   }
 
@@ -125,7 +125,7 @@ class _RandomWordsState extends State<RandomWords> with WidgetsBindingObserver {
       new MaterialPageRoute<void>(
         builder: (BuildContext context) {
           final Iterable<ListTile> tiles = _saved.map(
-                (WordPair pair) {
+            (WordPair pair) {
               return new ListTile(
                 title: new Text(
                   pair.asPascalCase,

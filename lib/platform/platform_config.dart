@@ -7,13 +7,13 @@ class PlatformConfig extends Equatable {
   PlatformConfig();
 
   @JsonKey(name: "route_name")
-  String route_name;
+  String? route_name;
 
   @JsonKey(name: "app_version")
-  String app_version;
+  String? app_version;
 
   @override
-  List<Object> get props => [route_name, app_version];
+  List<Object?> get props => [route_name, app_version];
 
   factory PlatformConfig.fromJson(Map<String, dynamic> json) =>
       platformConfigFromJson(json);

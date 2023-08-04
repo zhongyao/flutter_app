@@ -3,7 +3,7 @@ import 'package:flutter/cupertino.dart';
 class PageRouter<T> extends PageRouteBuilder<T> {
   final Widget child;
 
-  PageRouter({RouteSettings settings, this.child})
+  PageRouter({RouteSettings? settings, required this.child})
       : super(
           settings: settings,
           pageBuilder: (BuildContext context, Animation<double> animation,

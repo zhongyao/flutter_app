@@ -1,4 +1,3 @@
-
 class RouterPath {
   ///入库页
   static const entrancePage = "/route/entrance_page";
@@ -8,5 +7,4 @@ class RouterPath {
 
   ///动画页
   static const animPage = "/route/anim_page";
-
 }

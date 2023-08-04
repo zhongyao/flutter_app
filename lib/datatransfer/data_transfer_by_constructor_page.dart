@@ -9,7 +9,7 @@ import 'package:startup_namer/datatransfer/transfer_data_entity.dart';
 class DataTransferByConstructorPage extends StatelessWidget {
   final TransferDataEntity data;
 
-  DataTransferByConstructorPage({this.data});
+  DataTransferByConstructorPage({super.key, required this.data});
 
   @override
   Widget build(BuildContext context) {

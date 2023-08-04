@@ -4,9 +4,9 @@ import 'package:flutter/cupertino.dart';
 ///AnimatedWidget类封装了调用setState()的细节，并允许我们将 widget 分离出来
 class AnimatedImage extends AnimatedWidget {
   const AnimatedImage({
-    Key key,
-    Animation<double> animation,
-  }) : super(key: key, listenable: animation);
+    Key? key,
+    Animation<double>? animation,
+  }) : super(key: key, listenable: (animation as Listenable));
 
   @override
   Widget build(BuildContext context) {

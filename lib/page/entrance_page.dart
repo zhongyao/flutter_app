@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:startup_namer/page/widget/my_drawer.dart';
 
 class EntrancePage extends StatefulWidget {
-  const EntrancePage({Key key}) : super(key: key);
+  const EntrancePage({Key? key}) : super(key: key);
 
   @override
   State<StatefulWidget> createState() => _EntrancePageState();

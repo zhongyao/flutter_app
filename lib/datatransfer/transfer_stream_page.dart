@@ -10,7 +10,7 @@ class TransferStreamPage extends StatefulWidget {
 }
 
 class _TransferStreamPageState extends State<TransferStreamPage> {
-  StreamController _streamController = streamSingletonData.streamController;
+  StreamController? _streamController = streamSingletonData.streamController;
 
   @override
   Widget build(BuildContext context) {
@@ -19,7 +19,7 @@ class _TransferStreamPageState extends State<TransferStreamPage> {
           title: Text("全局单例结合Stream"),
         ),
         body: StreamBuilder(
-            stream: _streamController.stream,
+            stream: _streamController?.stream,
             initialData: TransferDataEntity("", "", 0),
             builder: (context, snapshot) {
               return Column(
@@ -46,7 +46,7 @@ class _TransferStreamPageState extends State<TransferStreamPage> {
 
   @override
   void dispose() {
-    _streamController.close();
+    _streamController?.close();
     super.dispose();
   }
 }

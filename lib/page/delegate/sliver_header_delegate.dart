@@ -6,25 +6,25 @@ typedef SliverHeaderBuilder = Widget Function(
 class SliverHeaderDelegate extends SliverPersistentHeaderDelegate {
   // child 为 header
   SliverHeaderDelegate({
-    this.maxHeight,
+    required this.maxHeight,
     this.minHeight = 0,
-    Widget child,
+    required Widget child,
   })  : builder = ((a, b, c) => child),
         assert(minHeight <= maxHeight && minHeight >= 0);
 
   //最大和最小高度相同
   SliverHeaderDelegate.fixedHeight({
-    double height,
-    Widget child,
+    required double height,
+    required Widget child,
   })  : builder = ((a, b, c) => child),
         maxHeight = height,
         minHeight = height;
 
   //需要自定义builder时使用
   SliverHeaderDelegate.builder({
-    this.maxHeight,
+    required this.maxHeight,
     this.minHeight = 0,
-    this.builder,
+    required this.builder,
   });
 
   final double maxHeight;

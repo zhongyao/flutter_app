@@ -6,9 +6,6 @@ class TransferSingletonPage extends StatefulWidget {
   State<StatefulWidget> createState() {
     return _TransferSingletonPageState();
   }
-
-  @override
-  Widget build(BuildContext context) {}
 }
 
 class _TransferSingletonPageState extends State<TransferSingletonPage> {
@@ -24,17 +21,17 @@ class _TransferSingletonPageState extends State<TransferSingletonPage> {
           Container(
             alignment: Alignment.center,
             height: 40.0,
-            child: Text(data.name),
+            child: Text("${data?.name}"),
           ),
           Container(
             alignment: Alignment.center,
             height: 40.0,
-            child: Text(data.id),
+            child: Text("${data?.id}"),
           ),
           Container(
             alignment: Alignment.center,
             height: 40.0,
-            child: Text("${data.age}"),
+            child: Text("${data?.age}"),
           ),
         ],
       ),

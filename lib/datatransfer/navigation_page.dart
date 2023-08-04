@@ -96,14 +96,14 @@ class NavigationPage extends StatelessWidget {
 ///通过构造器的方式传递参数
 _transferDataByConstructor(GlobalKey<NavigatorState> navigatorKey,
     BuildContext context, TransferDataEntity data) {
-  navigatorKey.currentState.push(MaterialPageRoute(
+  navigatorKey.currentState?.push(MaterialPageRoute(
       builder: (context) => DataTransferByConstructorPage(data: data)));
 }
 
 ///跳转的时候我们需要使用异步等待回调结果 dataFromOtherPage 就是返回的结果
 _toTransferForResult(GlobalKey<NavigatorState> navigatorKey,
     BuildContext context, TransferDataEntity data) async {
-  final dataFromOtherPage = await navigatorKey.currentState.push(
+  final dataFromOtherPage = await navigatorKey.currentState?.push(
     MaterialPageRoute(
         builder: (context) => DataTransferByConstructorPage(data: data)),
   ) as TransferDataEntity;
@@ -114,7 +114,7 @@ _toTransferForResult(GlobalKey<NavigatorState> navigatorKey,
 ///跳转到IDataWidget页面并携带数据
 _inheritedToPage(GlobalKey<NavigatorState> navigatorKey, BuildContext context,
     TransferDataEntity data) {
-  navigatorKey.currentState.push(MaterialPageRoute(
+  navigatorKey.currentState?.push(MaterialPageRoute(
       builder: (context) => IDataProvider(
             child: IDataWidget(),
             data: data,

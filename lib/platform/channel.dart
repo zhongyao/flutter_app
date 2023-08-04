@@ -6,7 +6,7 @@ import 'package:flutter/services.dart';
 class Channel {
   static final Channel _singleton = Channel._internal();
   static const MethodChannel interactionChannel =
-      const MethodChannel('interaction_channel');
+      MethodChannel('interaction_channel');
 
   //flutter端创建一个BasicMessageChannel通道
   static var basicChannel = const BasicMessageChannel(
@@ -29,7 +29,7 @@ class Channel {
           var nativeData = call.arguments["invoke_name"];
           debugPrint("invoke_name $nativeData");
         }
-        return null;
+        return Future(() => null);
       });
 
       /**
@@ -57,7 +57,7 @@ class Channel {
     /**
      * 【BasicMessageChannel】Flutter --> Native[且有数据返回]
      */
-    String result = await basicChannel.send({'name': 'azy', 'age': 19});
+    Object? result = await basicChannel.send({'name': 'azy', 'age': 19});
     debugPrint('result:$result');
   }
 

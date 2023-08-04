@@ -33,7 +33,7 @@ PlatformConfig parseRouteConfig(String route) {
 }
 
 class MyApp extends StatelessWidget {
-  const MyApp({Key key}) : super(key: key);
+  const MyApp({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -56,9 +56,10 @@ class MyApp extends StatelessWidget {
                       ],
                       child: Consumer<ThemeProvider>(builder:
                           (BuildContext context, ThemeProvider themeProvider,
-                              Widget child) {
+                              Widget? child) {
                         return MaterialApp(
                           debugShowCheckedModeBanner: true,
+
                           /// 切换入口
                           initialRoute: RouterPath.animPage,
                           localizationsDelegates: const [
@@ -73,7 +74,7 @@ class MyApp extends StatelessWidget {
                           onGenerateRoute: (RouteSettings settings) {
                             final Map<String, WidgetBuilder> routers =
                                 getRouters();
-                            final WidgetBuilder builder =
+                            final WidgetBuilder? builder =
                                 routers[settings.name];
                             if (builder != null) {
                               return PageRouter(

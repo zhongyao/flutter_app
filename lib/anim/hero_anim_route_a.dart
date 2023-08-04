@@ -1,11 +1,10 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 import 'hero_anim_route_b.dart';
 
 ///Hero 动画
 class HeroAnimationRouteA extends StatelessWidget {
-  const HeroAnimationRouteA({Key key}) : super(key: key);
+  const HeroAnimationRouteA({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {

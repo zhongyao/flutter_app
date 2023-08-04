@@ -31,7 +31,7 @@ Future<Album> deleteAlbum(String id) async {
 }
 
 class HttpApp extends StatefulWidget {
-  HttpApp({Key key}) : super(key: key);
+  HttpApp({Key? key}) : super(key: key);
 
   @override
   _HttpAppState createState() {
@@ -40,7 +40,7 @@ class HttpApp extends StatefulWidget {
 }
 
 class _HttpAppState extends State<HttpApp> {
-  Future<Album> futureAlbum;
+  Future<Album>? futureAlbum;
 
   @override
   void initState() {
@@ -75,8 +75,7 @@ class _HttpAppState extends State<HttpApp> {
                       child: Text('Delete Data'),
                       onPressed: () {
                         setState(() {
-                          futureAlbum =
-                              deleteAlbum(snapshot.data.id.toString());
+                          futureAlbum = deleteAlbum("${snapshot.data?.id}");
                         });
                       },
                     )
@@ -98,7 +97,7 @@ class Album {
   final int id;
   final String title;
 
-  Album({this.id, this.title});
+  Album({required this.id, required this.title});
 
   factory Album.fromJson(Map<String, dynamic> json) {
     return Album(

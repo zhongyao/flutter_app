@@ -1,9 +1,10 @@
 import 'package:startup_namer/datatransfer/transfer_data_entity.dart';
 
 class TransferDataSingleton {
-  static final TransferDataSingleton _instance = TransferDataSingleton.__internal();
+  static final TransferDataSingleton _instance =
+      TransferDataSingleton.__internal();
 
-  TransferDataEntity transData;
+  TransferDataEntity? transData;
 
   TransferDataSingleton.__internal();
 

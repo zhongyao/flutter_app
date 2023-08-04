@@ -28,7 +28,7 @@ class GirdApp extends StatelessWidget {
 class MyHomePage extends StatelessWidget {
   final String title;
 
-  MyHomePage({Key key, this.title}) : super(key: key);
+  MyHomePage({Key? key, required this.title}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -38,13 +38,13 @@ class MyHomePage extends StatelessWidget {
       ),
 
       ///创建一个基于与[Future]交互的最新快照的一个Widget
-      body: FutureBuilder<List<Photo>>(
+      body: FutureBuilder<List<Photo>?>(
         future: fetchPhotos(http.Client()),
         builder: (context, snapshot) {
           if (snapshot.connectionState == ConnectionState.done) {
             //future执行完毕
             if (snapshot.hasData) {
-              return PhotosList(photos: snapshot.data);
+              return PhotosList(photos: snapshot.data!);
             } else if (snapshot.hasError) {
               print(snapshot.error);
             }
@@ -58,9 +58,10 @@ class MyHomePage extends StatelessWidget {
 
 ///获取网络数据，并解析
 ///此处Future相当于ES6的Promise, async/await相当于ES7中的async/await
-Future<List<Photo>> fetchPhotos(http.Client client) async {
+Future<List<Photo>?>? fetchPhotos(http.Client? client) async {
   final response =
       await http.get(Uri.parse('https://jsonplaceholder.typicode.com/photos'));
+
   ///通过 Flutter 提供的 compute() 方法将解析和转换的工作移交到一个后台 isolate 中
   ///这个 compute() 函数可以在后台 isolate 中运行复杂的函数并返回结果。
   if (response.statusCode == 200) {
@@ -82,7 +83,7 @@ List<Photo> parsePhotos(String responseBody) {
 class PhotosList extends StatelessWidget {
   final List<Photo> photos;
 
-  PhotosList({Key key, this.photos}) : super(key: key);
+  PhotosList({Key? key, required this.photos}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -106,7 +107,12 @@ class Photo {
   final String url;
   final String thumbnailUrl;
 
-  Photo({this.albumId, this.id, this.title, this.url, this.thumbnailUrl});
+  Photo(
+      {required this.albumId,
+      required this.id,
+      required this.title,
+      required this.url,
+      required this.thumbnailUrl});
 
   //当你需要构造函数不是每次都创建一个新的对象时，使用factory关键字。
   factory Photo.fromJson(Map<String, dynamic> json) {

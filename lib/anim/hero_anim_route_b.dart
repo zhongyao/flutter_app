@@ -1,7 +1,7 @@
 import 'package:flutter/cupertino.dart';
 
 class HeroAnimationRouteB extends StatelessWidget {
-  const HeroAnimationRouteB({Key key}) : super(key: key);
+  const HeroAnimationRouteB({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
