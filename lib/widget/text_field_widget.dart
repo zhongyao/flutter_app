@@ -3,6 +3,7 @@ import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:startup_namer/util/print_util.dart';
 
+//收起键盘或者按返回键TextField的焦点自动消失
 class TextFieldWidget extends StatefulWidget {
   const TextFieldWidget({super.key});
 
