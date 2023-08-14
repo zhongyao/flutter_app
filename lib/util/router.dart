@@ -7,4 +7,7 @@ class RouterPath {
 
   ///动画页
   static const animPage = "/route/anim_page";
+
+  ///普通控件测试页面
+  static const testWidgetPage = "/";
 }
