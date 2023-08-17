@@ -4,13 +4,13 @@ import android.os.Bundle
 import android.util.Log
 import com.google.gson.Gson
 import com.hongri.startup_namer.info.PersonInfo
+import com.hongri.startup_namer.platform.MyPlatformViewFactory
 import io.flutter.embedding.engine.FlutterEngine
 import io.flutter.plugin.common.BasicMessageChannel
 import io.flutter.plugin.common.EventChannel
 import io.flutter.plugin.common.MethodCall
 import io.flutter.plugin.common.MethodChannel
 import io.flutter.plugin.common.StandardMessageCodec
-import kotlinx.android.synthetic.main.activity_main_flutter.mcNative2Flutter
 import java.util.Timer
 import kotlin.concurrent.timerTask
 
@@ -26,6 +26,7 @@ import kotlin.concurrent.timerTask
 class MainFlutterActivity : BaseFlutterActivity() {
     private var name: String? = ""
     private var age: Int? = 0
+    private val viewType: String = "com.hongri.platform.view1";
 
     companion object {
         const val TAG = "yao";
@@ -66,7 +67,17 @@ class MainFlutterActivity : BaseFlutterActivity() {
 
         //EventChannel【单向通信Native-->Flutter】
         initEventChannel(flutterEngine)
+
+        registerViewFactory(this, flutterEngine)
     }
+
+    private fun registerViewFactory(activity: MainFlutterActivity, flutterEngine: FlutterEngine) {
+        flutterEngine.platformViewsController.registry.registerViewFactory(
+            viewType,
+            MyPlatformViewFactory()
+        )
+    }
+
 
     private fun initEventChannel(flutterEngine: FlutterEngine) {
         EventChannel(
