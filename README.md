@@ -29,7 +29,7 @@
 #### 四、全局的提供数据的方式[与三类似]
 #### 五、通过全局单例模式来使用
 #### 六、全局单例结合Stream的方式传递数据
-#### [参考](https://segmentfault.com/a/1190000020007938)
+#### [页面数据传递参考](https://segmentfault.com/a/1190000020007938)
 
 
 #### [Navigator路由跳转](https://www.cnblogs.com/mingfeng002/category/1578213.html)
