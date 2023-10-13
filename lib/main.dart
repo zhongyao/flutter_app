@@ -7,6 +7,7 @@ import 'package:provider/provider.dart';
 import 'package:startup_namer/page/anim_page.dart';
 import 'package:startup_namer/page/entrance_page.dart';
 import 'package:startup_namer/page/scroll_page.dart';
+import 'package:startup_namer/page/test_widget_page.dart';
 import 'package:startup_namer/platform/channel.dart';
 import 'package:startup_namer/platform/platform_config.dart';
 import 'package:startup_namer/provider/theme_provider.dart';
@@ -61,7 +62,7 @@ class MyApp extends StatelessWidget {
                           debugShowCheckedModeBanner: true,
 
                           /// 切换入口
-                          initialRoute: RouterPath.animPage,
+                          initialRoute: RouterPath.testWidgetPage,
                           localizationsDelegates: const [
                             GlobalMaterialLocalizations.delegate,
                             GlobalWidgetsLocalizations.delegate,
@@ -101,7 +102,8 @@ class MyApp extends StatelessWidget {
     Map<String, WidgetBuilder> routers = {
       RouterPath.entrancePage: (context) => const EntrancePage(),
       RouterPath.scrollPage: (context) => const ScrollPage(),
-      RouterPath.animPage: (context) => const AnimPage()
+      RouterPath.animPage: (context) => const AnimPage(),
+      RouterPath.testWidgetPage: (context) => const TestWidgetPage()
     };
     return routers;
   }
