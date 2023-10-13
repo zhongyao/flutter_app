@@ -1,11 +1,24 @@
 buildscript {
     ext.kotlin_version = '1.6.10'
     repositories {
-        google()
-        jcenter()
+//        google()
+//        jcenter()
         maven { url 'https://plugins.gradle.org/m2/'}
-        jcenter()
+//        jcenter()
         gradlePluginPortal()
+
+        maven {
+            url 'https://maven.aliyun.com/repository/google'
+            allowInsecureProtocol = true
+        }
+        maven {
+            url 'https://maven.aliyun.com/repository/jcenter'
+            allowInsecureProtocol = true
+        }
+        maven {
+            url 'https://maven.aliyun.com/nexus/content/groups/public'
+            allowInsecureProtocol = true
+        }
     }
 
     dependencies {
@@ -16,11 +29,24 @@ buildscript {
 
 allprojects {
     repositories {
-        google()
-        jcenter()
+//        google()
+//        jcenter()
         maven { url 'https://plugins.gradle.org/m2/'}
-        jcenter()
+//        jcenter()
         gradlePluginPortal()
+
+        maven {
+            url 'https://maven.aliyun.com/repository/google'
+            allowInsecureProtocol = true
+        }
+        maven {
+            url 'https://maven.aliyun.com/repository/jcenter'
+            allowInsecureProtocol = true
+        }
+        maven {
+            url 'https://maven.aliyun.com/nexus/content/groups/public'
+            allowInsecureProtocol = true
+        }
     }
 }
 
