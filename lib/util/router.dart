@@ -10,4 +10,7 @@ class RouterPath {
 
   ///普通控件测试页面
   static const testWidgetPage = "/";
+
+  ///riverpod状态管理页
+  static const riverpodPage = "/route/riverpod_page";
 }
