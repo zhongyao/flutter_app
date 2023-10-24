@@ -30,7 +30,7 @@ class _RandomWordsState extends State<RandomWords> with WidgetsBindingObserver {
     super.initState();
     print('调用了 + initState');
 
-    WidgetsBinding.instance.addObserver(this);
+    WidgetsBinding.instance?.addObserver(this);
 
     /**
      * 帧绘制回调:
@@ -40,11 +40,11 @@ class _RandomWordsState extends State<RandomWords> with WidgetsBindingObserver {
      *    指实时 Frame 绘制回调
      */
 
-    WidgetsBinding.instance.addPostFrameCallback((_) {
+    WidgetsBinding.instance?.addPostFrameCallback((_) {
       print(" 单次 Frame 绘制回调 "); // 只回调一次
     });
 
-    WidgetsBinding.instance.addPersistentFrameCallback((_) {
+    WidgetsBinding.instance?.addPersistentFrameCallback((_) {
       print(" 实时 Frame 绘制回调 "); // 每帧都回调
     });
   }
