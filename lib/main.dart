@@ -2,6 +2,7 @@ import 'dart:convert';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:startup_namer/my_app.dart';
 import 'package:startup_namer/platform/channel.dart';
 import 'package:startup_namer/platform/platform_config.dart';
 import 'package:startup_namer/util/print_util.dart';
@@ -9,10 +10,10 @@ import 'my_riverpod_app.dart';
 
 void main() {
   ///riverpod状态管理使用如下方式：
-  runApp(const ProviderScope(child: MyRiverPodApp()));
+  // runApp(const ProviderScope(child: MyRiverPodApp()));
 
   ///provider状态管理使用如下方式：
-  // runApp(const MyApp());
+  runApp(const MyApp());
   PrintUtil.print('main函数');
 }
 

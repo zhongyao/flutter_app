@@ -3,6 +3,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:startup_namer/base/common_base_state.dart';
 import 'package:startup_namer/router/popup/my_dialog.dart';
 import 'package:startup_namer/util/print_util.dart';
+import 'package:startup_namer/util/router.dart';
 
 import '../router/popup/my_bottom_sheet.dart';
 
@@ -43,31 +44,20 @@ class _TestWidgetPageState extends CommonPageState<TestWidgetPage> {
           GestureDetector(
             onTap: () => {showMyBottomSheet(context)},
             child: const Text("点击弹出Menu"),
+          ),
+          SizedBox(
+            height: 20.w,
+          ),
+          GestureDetector(
+            onTap: () => {goToInheritedWidgetPage(context)},
+            child: const Text("点击进入测试InheritedWidget页面"),
           )
         ],
       ),
     );
+  }
 
-    // return Material(
-    //     child: Container(
-    //   alignment: Alignment.topCenter,
-    //   child: Column(
-    //     children: const [TextFieldWidget()],
-    //   ),
-    // ));
-
-    // return Material(
-    //   child: Stack(
-    //     children: [
-    //       Container(
-    //         margin: const EdgeInsets.only(top: 40),
-    //         alignment: Alignment.topCenter,
-    //         color: Colors.white,
-    //         child: const Text("哈哈哈哈哈"),
-    //       ),
-    //       const PlatformViewWidget()
-    //     ],
-    //   ),
-    // );
+  void goToInheritedWidgetPage(BuildContext context) {
+    Navigator.of(context).pushNamed(RouterPath.inheritedWidgetPage);
   }
 }

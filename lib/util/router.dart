@@ -13,4 +13,7 @@ class RouterPath {
 
   ///riverpod状态管理页
   static const riverpodPage = "/route/riverpod_page";
+
+  ///InheritedWidget测试页
+  static const inheritedWidgetPage = "/route/inherited_widget_page";
 }

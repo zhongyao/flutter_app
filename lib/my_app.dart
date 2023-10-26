@@ -11,6 +11,7 @@ import 'package:startup_namer/page/test_widget_page.dart';
 import 'package:startup_namer/provider/theme_provider.dart';
 import 'package:startup_namer/router/page_route.dart';
 import 'package:startup_namer/util/router.dart';
+import 'package:startup_namer/widget/inheritedwidget/inherited_widget_test_route.dart';
 
 class MyApp extends StatelessWidget {
   const MyApp({Key? key}) : super(key: key);
@@ -82,7 +83,8 @@ class MyApp extends StatelessWidget {
       RouterPath.entrancePage: (context) => const EntrancePage(),
       RouterPath.scrollPage: (context) => const ScrollPage(),
       RouterPath.animPage: (context) => const AnimPage(),
-      RouterPath.testWidgetPage: (context) => const TestWidgetPage()
+      RouterPath.testWidgetPage: (context) => const TestWidgetPage(),
+      RouterPath.inheritedWidgetPage: (context) => const InheritedWidgetTestPage()
     };
     return routers;
   }
