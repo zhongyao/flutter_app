@@ -21,6 +21,7 @@ class _TestWidgetState extends State<TestWidget> {
 
   @override
   Widget build(BuildContext context) {
+    PrintUtil.print("TestWidget -- build");
     //使用InheritedWidget中的共享数据
     return Text(ShareDataWidget.of(context)!.data.toString());
   }

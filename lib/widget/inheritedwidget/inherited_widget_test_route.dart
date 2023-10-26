@@ -26,7 +26,7 @@ class _InheritedWidgetTestPageState extends CommonPageState<InheritedWidgetTestP
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             SizedBox(height: 100.w),
-            const TestWidget(),
+            TestWidget(),
             // 点击count+1，刷新次build方法，更新ShareDataWidget中的data值，
             // ShareDataWidget中的值更新了，就会调用依赖InheritedWidget的子TestWidget中的
             // didChangeDependencies方法
