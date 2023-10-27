@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:startup_namer/page/widget/my_drawer.dart';
 
+import '../generated/l10n.dart';
+
 class EntrancePage extends StatefulWidget {
   const EntrancePage({Key? key}) : super(key: key);
 
@@ -16,7 +18,7 @@ class _EntrancePageState extends State<EntrancePage> {
     return Scaffold(
       appBar: AppBar(
         //导航栏
-        title: const Text("红日"),
+        title: Text(S.current.sun_main_title),
         actions: <Widget>[
           IconButton(onPressed: () => {}, icon: const Icon(Icons.share))
         ],

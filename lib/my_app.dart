@@ -10,8 +10,11 @@ import 'package:startup_namer/page/scroll_page.dart';
 import 'package:startup_namer/page/test_widget_page.dart';
 import 'package:startup_namer/provider/theme_provider.dart';
 import 'package:startup_namer/router/page_route.dart';
+import 'package:startup_namer/util/print_util.dart';
 import 'package:startup_namer/util/router.dart';
 import 'package:startup_namer/widget/inheritedwidget/inherited_widget_test_route.dart';
+
+import 'generated/l10n.dart';
 
 class MyApp extends StatelessWidget {
   const MyApp({Key? key}) : super(key: key);
@@ -48,10 +51,11 @@ class MyApp extends StatelessWidget {
                             GlobalWidgetsLocalizations.delegate,
                             GlobalCupertinoLocalizations.delegate,
                           ],
-                          supportedLocales: const [
-                            Locale('en'), // English
-                            Locale('es'), // Spanish
-                          ],
+                          supportedLocales: S.delegate.supportedLocales,
+                          localeListResolutionCallback: (locales, supportedLocales) {
+                            PrintUtil.print('当前系统语言环境$locales');
+                            return;
+                          },
                           onGenerateRoute: (RouteSettings settings) {
                             final Map<String, WidgetBuilder> routers =
                                 getRouters();

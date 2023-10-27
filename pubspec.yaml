@@ -24,6 +24,7 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
+  # 支持国际化
   flutter_localizations:
     sdk: flutter
   # dependency_overrides 强制使用某个版本
@@ -97,3 +98,6 @@ flutter:
   #
   # For details regarding fonts from package dependencies,
   # see https://flutter.dev/custom-fonts/#from-packages
+flutter_intl:
+  enabled: true
+#  class_name: SunS
