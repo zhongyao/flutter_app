@@ -8,6 +8,7 @@ import 'package:startup_namer/page/anim_page.dart';
 import 'package:startup_namer/page/entrance_page.dart';
 import 'package:startup_namer/page/scroll_page.dart';
 import 'package:startup_namer/page/test_widget_page.dart';
+import 'package:startup_namer/page/touch_event_page.dart';
 import 'package:startup_namer/provider/theme_provider.dart';
 import 'package:startup_namer/router/page_route.dart';
 import 'package:startup_namer/util/print_util.dart';
@@ -45,7 +46,7 @@ class MyApp extends StatelessWidget {
                           debugShowCheckedModeBanner: true,
 
                           /// 切换入口
-                          initialRoute: RouterPath.testWidgetPage,
+                          initialRoute: RouterPath.touchEventPage,
                           localizationsDelegates: const [
                             GlobalMaterialLocalizations.delegate,
                             GlobalWidgetsLocalizations.delegate,
@@ -88,7 +89,8 @@ class MyApp extends StatelessWidget {
       RouterPath.scrollPage: (context) => const ScrollPage(),
       RouterPath.animPage: (context) => const AnimPage(),
       RouterPath.testWidgetPage: (context) => const TestWidgetPage(),
-      RouterPath.inheritedWidgetPage: (context) => const InheritedWidgetTestPage()
+      RouterPath.inheritedWidgetPage: (context) => const InheritedWidgetTestPage(),
+      RouterPath.touchEventPage: (context) => const TouchEventPage()
     };
     return routers;
   }

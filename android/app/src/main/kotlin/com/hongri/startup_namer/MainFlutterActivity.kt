@@ -147,7 +147,7 @@ class MainFlutterActivity : BaseFlutterActivity() {
 
                 Log.d(TAG, "native --> flutter:$INTERACTION_METHOD_ONE_FLUTTER")
             }
-        }, 2000, 3000)
+        }, 2000, 300000)
     }
 
     private fun onMethodRealCall(methodCall: MethodCall, result: MethodChannel.Result) {
