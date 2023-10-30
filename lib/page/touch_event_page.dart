@@ -18,6 +18,7 @@ class _TouchEventPageState extends CommonPageState<TouchEventPage> {
   double left = 0.0; //距左边的偏移
   double _width = 200.0; //通过修改图片宽度来达到缩放效果
   bool _toggle = false; //变色开关
+  final TapGestureRecognizer _tapGestureRecognizer = TapGestureRecognizer();
 
   @override
   Widget buildPageContent(BuildContext context) {
@@ -122,7 +123,7 @@ class _TouchEventPageState extends CommonPageState<TouchEventPage> {
             const TextSpan(text: "哈哈哈"),
             TextSpan(text: "点我变色",
                 style: TextStyle(color: _toggle ? Colors.blue : Colors.green),
-                recognizer: TapGestureRecognizer()
+                recognizer: _tapGestureRecognizer
                   ..onTap = () {
                     setState(() {
                       _toggle = !_toggle;
@@ -132,5 +133,12 @@ class _TouchEventPageState extends CommonPageState<TouchEventPage> {
           ]
       )),
     );
+  }
+
+  @override
+  void dispose() {
+    //用到GestureRecognizer的话一定要调用其dispose方法释放资源（主要是取消内部的计时器）
+    _tapGestureRecognizer.dispose();
+    super.dispose();
   }
 }
