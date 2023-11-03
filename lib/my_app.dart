@@ -4,17 +4,12 @@ import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:provider/provider.dart';
-import 'package:startup_namer/page/anim_page.dart';
-import 'package:startup_namer/page/entrance_page.dart';
-import 'package:startup_namer/page/scroll_page.dart';
-import 'package:startup_namer/page/test_widget_page.dart';
-import 'package:startup_namer/page/touch_event_page.dart';
-import 'package:startup_namer/page/video_player_page.dart';
+import 'package:startup_namer/my_router.dart';
+import 'package:startup_namer/page/test_page.dart';
 import 'package:startup_namer/provider/theme_provider.dart';
 import 'package:startup_namer/router/page_route.dart';
 import 'package:startup_namer/util/print_util.dart';
 import 'package:startup_namer/util/router.dart';
-import 'package:startup_namer/widget/inheritedwidget/inherited_widget_test_route.dart';
 
 import 'generated/l10n.dart';
 
@@ -45,16 +40,16 @@ class MyApp extends StatelessWidget {
                               Widget? child) {
                         return MaterialApp(
                           debugShowCheckedModeBanner: true,
-
-                          /// 切换入口
-                          initialRoute: RouterPath.scrollPage,
+                          /// 入口
+                          initialRoute: RouterPath.testPage,
                           localizationsDelegates: const [
                             GlobalMaterialLocalizations.delegate,
                             GlobalWidgetsLocalizations.delegate,
                             GlobalCupertinoLocalizations.delegate,
                           ],
                           supportedLocales: S.delegate.supportedLocales,
-                          localeListResolutionCallback: (locales, supportedLocales) {
+                          localeListResolutionCallback:
+                              (locales, supportedLocales) {
                             PrintUtil.print('当前系统语言环境$locales');
                             return;
                           },
@@ -83,16 +78,10 @@ class MyApp extends StatelessWidget {
     //初始化
   }
 
-  ///各页面的路由
   Map<String, WidgetBuilder> getRouters() {
     Map<String, WidgetBuilder> routers = {
-      RouterPath.entrancePage: (context) => const EntrancePage(),
-      RouterPath.scrollPage: (context) => const ScrollPage(),
-      RouterPath.animPage: (context) => const AnimPage(),
-      RouterPath.testWidgetPage: (context) => const TestWidgetPage(),
-      RouterPath.inheritedWidgetPage: (context) => const InheritedWidgetTestPage(),
-      RouterPath.touchEventPage: (context) => const TouchEventPage(),
-      RouterPath.videoPlayerPage: (context) => const VideoPlayerPage()
+      '/': (context) => const TestPage(),
+      ...MyRouter.instance.routers()
     };
     return routers;
   }
