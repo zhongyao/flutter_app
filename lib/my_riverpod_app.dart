@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:startup_namer/page/riverpod_page.dart';
+import 'package:startup_namer/page/riverpod_page2.dart';
 
 ///RiverPod App..
 class MyRiverPodApp extends StatelessWidget {
@@ -8,6 +9,6 @@ class MyRiverPodApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(home: RiverPodPage());
+    return const MaterialApp(home: RiverPodPage2());
   }
 }

@@ -11,6 +11,6 @@ class ScrollPage extends StatefulWidget {
 class _ScrollPageState extends State<ScrollPage> {
   @override
   Widget build(BuildContext context) {
-    return CustomScrollViewWidget();
+    return const CustomScrollViewWidget();
   }
 }

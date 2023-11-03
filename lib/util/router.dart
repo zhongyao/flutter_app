@@ -3,7 +3,8 @@ class RouterPath {
   static const entrancePage = "/route/entrance_page";
 
   ///滚动页
-  static const scrollPage = "/route/scroll_page";
+  static const scrollPage = "/";
+  // static const scrollPage = "/route/scroll_page";
 
   ///动画页
   static const animPage = "/route/anim_page";
@@ -18,6 +19,10 @@ class RouterPath {
   static const inheritedWidgetPage = "/route/inherited_widget_page";
 
   ///手势事件页
-  static const touchEventPage = "/";
-  // static const touchEventPage = "/route/touch_event_page";
+  // static const touchEventPage = "/";
+  static const touchEventPage = "/route/touch_event_page";
+
+  ///视频播放页
+  // static const videoPlayerPage = "/";
+  static const videoPlayerPage = "/route/video_player_page";
 }

@@ -46,6 +46,7 @@ dependencies:
   flutter_screenutil: ^5.7.0
 #  webview_flutter: 0.3.19+9
   flutter_riverpod: ^2.4.4
+  video_player: ^2.7.2
 
 dev_dependencies:
 
@@ -61,12 +62,14 @@ dev_dependencies:
 
 # The following section is specific to Flutter.
 flutter:
-
+  generate: true
   # The following line ensures that the Material Icons font is
   # included with your application, so that you can use the icons in
   # the material Icons class.
   uses-material-design: true
-  assets: [ images/ ]
+#  assets: [ images/ ]
+  assets:
+    - assets/configurations.json
 
   # To add assets to your application, add an assets section, like this:
   # assets:
