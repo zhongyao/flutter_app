@@ -5,8 +5,15 @@ class RouterPath {
   ///主页页
   static const entrancePage = "/route/entrance_page";
 
-  ///滚动页
-  static const scrollPage = "/route/scroll_page";
+  ///EasyRefresh + NestedScrollView + TabBar + TabBarView
+  static const easyRefreshNestedScrollViewPage =
+      "/route/easy_refresh_nested_scroll_view";
+
+  ///NestedScrollView
+  static const nestedScrollViewWidget = "/route/nested_scroll_view";
+
+  ///CustomScrollView
+  static const customScrollView = "/route/custom_scroll_view";
 
   ///动画页
   static const animPage = "/route/anim_page";
@@ -27,5 +34,5 @@ class RouterPath {
   static const videoPlayerPage = "/route/video_player_page";
 
   ///easy_refresh + tabBarView示例
-  static const tabBarViewPage= "/route/tab_bar_page";
+  static const tabBarViewPage = "/route/tab_bar_page";
 }

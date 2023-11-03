@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:startup_namer/base/common_base_state.dart';
 
 import '../delegate/sliver_header_delegate.dart';
 
@@ -13,9 +14,10 @@ class CustomScrollViewWidget extends StatefulWidget {
   }
 }
 
-class _CustomScrollViewWidgetState extends State<CustomScrollViewWidget> {
+class _CustomScrollViewWidgetState
+    extends CommonPageState<CustomScrollViewWidget> {
   @override
-  Widget build(BuildContext context) {
+  Widget buildPageContent(BuildContext context) {
     // return Material(child: buildTwoSliverList());
     return Material(child: buildAppBarSliverList());
   }

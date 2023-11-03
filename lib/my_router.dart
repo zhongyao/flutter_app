@@ -8,6 +8,8 @@ import 'package:startup_namer/page/test_page.dart';
 import 'package:startup_namer/page/test_widget_page.dart';
 import 'package:startup_namer/page/touch_event_page.dart';
 import 'package:startup_namer/page/video_player_page.dart';
+import 'package:startup_namer/page/widget/custom_scroll_view_widget.dart';
+import 'package:startup_namer/page/widget/nested_scroll_view_widget.dart';
 import 'package:startup_namer/util/router.dart';
 import 'package:startup_namer/widget/inheritedwidget/inherited_widget_test_route.dart';
 
@@ -24,7 +26,9 @@ class MyRouter {
   Map<String, WidgetBuilder> routers() {
     Map<String, WidgetBuilder> routers = {
       RouterPath.entrancePage: (context) => const EntrancePage(),
-      RouterPath.scrollPage: (context) => const ScrollPage(),
+      RouterPath.customScrollView: (context) => const CustomScrollViewWidget(),
+      RouterPath.nestedScrollViewWidget: (context) => const NestedScrollViewWidget(),
+      RouterPath.easyRefreshNestedScrollViewPage: (context) => const ScrollPage(),
       RouterPath.animPage: (context) => const AnimPage(),
       RouterPath.testWidgetPage: (context) => const TestWidgetPage(),
       RouterPath.inheritedWidgetPage: (context) =>
