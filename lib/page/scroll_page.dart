@@ -2,7 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:startup_namer/base/common_base_state.dart';
 import 'package:startup_namer/page/widget/custom_scroll_view_widget.dart';
-import 'package:startup_namer/page/widget/Refresh_Nested_scroll_view_widget.dart';
+import 'package:startup_namer/page/widget/refresh_nested_scroll_view_widget.dart';
 import 'package:startup_namer/page/widget/nested_scroll_view_widget.dart';
 
 class ScrollPage extends StatefulWidget {
