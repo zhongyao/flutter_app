@@ -72,6 +72,7 @@ flutter:
 #  assets: [ images/ ]
   assets:
     - assets/configurations.json
+    - images/
 
   # To add assets to your application, add an assets section, like this:
   # assets:
@@ -105,4 +106,4 @@ flutter:
   # see https://flutter.dev/custom-fonts/#from-packages
 flutter_intl:
   enabled: true
-#  class_name: SunS
+  class_name: S

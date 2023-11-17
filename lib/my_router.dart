@@ -2,6 +2,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:startup_namer/page/anim_page.dart';
 import 'package:startup_namer/page/entrance_page.dart';
+import 'package:startup_namer/page/hit_test_behavior_page.dart';
 import 'package:startup_namer/page/scroll_page.dart';
 import 'package:startup_namer/page/tab_bar_view_page.dart';
 import 'package:startup_namer/page/test_page.dart';
@@ -35,7 +36,8 @@ class MyRouter {
           const InheritedWidgetTestPage(),
       RouterPath.touchEventPage: (context) => const TouchEventPage(),
       RouterPath.videoPlayerPage: (context) => const VideoPlayerPage(),
-      RouterPath.tabBarViewPage: (context) => const TabBarViewPage()
+      RouterPath.tabBarViewPage: (context) => const TabBarViewPage(),
+      RouterPath.hitTestBehaviorPage: (context) => const HitTestBehaviorPage()
     };
     return routers;
   }

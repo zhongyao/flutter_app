@@ -57,7 +57,10 @@ abstract class CommonPageState<T extends StatefulWidget> extends State<T>
         // appBar: _getTitleBar(context),
         /// 包含ShowMenu的系统AppBar示例
         appBar: AppBar(
-          title: const Text("AppBar的title"),
+          title:
+              const Text("AppBar的title", style: TextStyle(color: Colors.black)),
+          backgroundColor: Colors.transparent,
+          shadowColor: Colors.transparent,
           actions: <Widget>[showMyMenuWidget(context)],
         ),
         body: _getContent(context),

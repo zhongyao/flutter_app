@@ -35,4 +35,7 @@ class RouterPath {
 
   ///easy_refresh + tabBarView示例
   static const tabBarViewPage = "/route/tab_bar_page";
+
+  ///HitTest事件机制页
+  static const hitTestBehaviorPage = "/route/hit_test_behavior_page";
 }

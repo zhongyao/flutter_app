@@ -46,6 +46,7 @@ class MyApp extends StatelessWidget {
                             GlobalMaterialLocalizations.delegate,
                             GlobalWidgetsLocalizations.delegate,
                             GlobalCupertinoLocalizations.delegate,
+                            S.delegate
                           ],
                           supportedLocales: S.delegate.supportedLocales,
                           localeListResolutionCallback:
@@ -80,7 +81,7 @@ class MyApp extends StatelessWidget {
 
   Map<String, WidgetBuilder> getRouters() {
     Map<String, WidgetBuilder> routers = {
-      '/': (context) => const TestPage(),
+      RouterPath.testPage: (context) => const TestPage(),
       ...MyRouter.instance.routers()
     };
     return routers;
