@@ -47,6 +47,7 @@ dependencies:
 #  webview_flutter: 0.3.19+9
   flutter_riverpod: ^2.4.4
   video_player: ^2.7.2
+  chewie: ^1.0.2
   easy_refresh: ^3.3.2+1
   extended_nested_scroll_view: 6.1.2
 

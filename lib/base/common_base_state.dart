@@ -61,6 +61,12 @@ abstract class CommonPageState<T extends StatefulWidget> extends State<T>
               const Text("AppBar的title", style: TextStyle(color: Colors.black)),
           backgroundColor: Colors.transparent,
           shadowColor: Colors.transparent,
+          systemOverlayStyle: const SystemUiOverlayStyle(
+            //设置状态栏的背景颜色
+            statusBarColor: Colors.white,
+            //状态栏的文字的颜色
+            statusBarIconBrightness: Brightness.light,
+          ),
           actions: <Widget>[showMyMenuWidget(context)],
         ),
         body: _getContent(context),

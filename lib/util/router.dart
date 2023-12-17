@@ -32,6 +32,8 @@ class RouterPath {
 
   ///视频播放页
   static const videoPlayerPage = "/route/video_player_page";
+  ///视频全屏播放页
+  static const videoPlayerFullPage = "/route/video_player_full_page";
 
   ///easy_refresh + tabBarView示例
   static const tabBarViewPage = "/route/tab_bar_page";

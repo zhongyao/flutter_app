@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:startup_namer/util/print_util.dart';
+import 'package:startup_namer/util/router.dart';
 import 'package:video_player/video_player.dart';
 
 ///视频播放组件
@@ -53,7 +54,7 @@ class _VideoPlayerScreenState extends State<VideoPlayerScreen> {
           ),
           Row(
             children: [
-              SizedBox(width: 100.w),
+              SizedBox(width: 30.w),
               GestureDetector(
                   child: Container(
                     margin: EdgeInsets.only(top: 20.w),
@@ -74,7 +75,7 @@ class _VideoPlayerScreenState extends State<VideoPlayerScreen> {
                           }
                         })
                       }),
-              SizedBox(width: 100.w),
+              SizedBox(width: 30.w),
               GestureDetector(
                   child: Container(
                       margin: EdgeInsets.only(top: 20.w),
@@ -93,6 +94,22 @@ class _VideoPlayerScreenState extends State<VideoPlayerScreen> {
                             _controller.pause();
                           }
                         })
+                      }),
+              GestureDetector(
+                  child: Container(
+                      margin: EdgeInsets.only(top: 20.w),
+                      padding: EdgeInsets.only(
+                          left: 20.w, right: 20.w, top: 10.w, bottom: 10.w),
+                      decoration: BoxDecoration(
+                          color: Colors.orange,
+                          borderRadius: BorderRadius.circular(5.r)),
+                      child: const Text(
+                        "全屏播放",
+                        style: TextStyle(fontWeight: FontWeight.bold),
+                      )),
+                  onTap: () => {
+                        Navigator.of(context)
+                            .pushNamed(RouterPath.videoPlayerFullPage)
                       })
             ],
           )

@@ -11,6 +11,7 @@ import 'package:startup_namer/page/touch_event_page.dart';
 import 'package:startup_namer/page/video_player_page.dart';
 import 'package:startup_namer/page/widget/custom_scroll_view_widget.dart';
 import 'package:startup_namer/page/widget/nested_scroll_view_widget.dart';
+import 'package:startup_namer/page/widget/video_player_full_screen.dart';
 import 'package:startup_namer/util/router.dart';
 import 'package:startup_namer/widget/inheritedwidget/inherited_widget_test_route.dart';
 
@@ -36,6 +37,7 @@ class MyRouter {
           const InheritedWidgetTestPage(),
       RouterPath.touchEventPage: (context) => const TouchEventPage(),
       RouterPath.videoPlayerPage: (context) => const VideoPlayerPage(),
+      RouterPath.videoPlayerFullPage: (context) => const VideoPlayerFullScreen(),
       RouterPath.tabBarViewPage: (context) => const TabBarViewPage(),
       RouterPath.hitTestBehaviorPage: (context) => const HitTestBehaviorPage()
     };
