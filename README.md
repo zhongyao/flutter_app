@@ -43,4 +43,4 @@
 
 #### [CustomScrollView + TabBar + TabBarView](https://github.com/zhongyao/flutter_app/blob/master/lib/page/widget/custom_scroll_view_widget.dart)
 #### [NestedScrollView + TabBar + TabBarView](https://github.com/zhongyao/flutter_app/blob/master/lib/page/widget/nested_scroll_view_widget.dart)
-#### [EasyRefresh + NestedScrollView + TabBar + TabBarView](https://github.com/zhongyao/flutter_app/blob/master/lib/page/widget/refresh_nested_scroll_view_widget.dart)
+#### [EasyRefresh(有注释) + NestedScrollView + TabBar + TabBarView](https://github.com/zhongyao/flutter_app/blob/master/lib/page/widget/refresh_nested_scroll_view_widget.dart)
