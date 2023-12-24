@@ -21,9 +21,6 @@ class RouterPath {
   ///普通控件测试页面
   static const testWidgetPage = "/route/test_widget_page";
 
-  ///riverpod状态管理页
-  static const riverpodPage = "/route/riverpod_page";
-
   ///InheritedWidget测试页
   static const inheritedWidgetPage = "/route/inherited_widget_page";
 
@@ -40,4 +37,13 @@ class RouterPath {
 
   ///HitTest事件机制页
   static const hitTestBehaviorPage = "/route/hit_test_behavior_page";
+
+  ///riverpod状态管理页1 --- 【StateProvider】
+  static const riverPodPage = "/route/riverpod_page";
+
+  ///riverpod状态管理页2 --- 【FutureProvider】
+  static const riverPodPage2 = "/route/riverpod_page2";
+
+  ///riverpod状态管理页3 --- 【StateNotifierProvider】
+  static const riverPodPage3 = "/route/riverpod_page3";
 }

@@ -3,6 +3,9 @@ import 'package:flutter/cupertino.dart';
 import 'package:startup_namer/page/anim_page.dart';
 import 'package:startup_namer/page/entrance_page.dart';
 import 'package:startup_namer/page/hit_test_behavior_page.dart';
+import 'package:startup_namer/page/riverpod_page.dart';
+import 'package:startup_namer/page/riverpod_page2.dart';
+import 'package:startup_namer/page/riverpod_page3.dart';
 import 'package:startup_namer/page/scroll_page.dart';
 import 'package:startup_namer/page/tab_bar_view_page.dart';
 import 'package:startup_namer/page/test_page.dart';
@@ -39,7 +42,10 @@ class MyRouter {
       RouterPath.videoPlayerPage: (context) => const VideoPlayerPage(),
       RouterPath.videoPlayerFullPage: (context) => const VideoPlayerFullScreen(),
       RouterPath.tabBarViewPage: (context) => const TabBarViewPage(),
-      RouterPath.hitTestBehaviorPage: (context) => const HitTestBehaviorPage()
+      RouterPath.hitTestBehaviorPage: (context) => const HitTestBehaviorPage(),
+      RouterPath.riverPodPage: (context) => const RiverPodPage(),
+      RouterPath.riverPodPage2: (context) => const RiverPodPage2(),
+      RouterPath.riverPodPage3: (context) => const RiverPodPage3(),
     };
     return routers;
   }

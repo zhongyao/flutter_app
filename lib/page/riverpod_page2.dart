@@ -4,8 +4,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:startup_namer/bean/user.dart';
 
+///RiverPod状态管理页 --- 【FutureProvider】
 final configProvider = FutureProvider<String>((ref) async {
   final content = json.decode(
     await rootBundle.loadString('assets/configurations.json'),
@@ -23,7 +23,6 @@ class RiverPodPage2 extends ConsumerStatefulWidget {
 }
 
 class _RiverPodPage2State extends ConsumerState {
-
   @override
   Widget build(BuildContext context) {
     AsyncValue<String> user = ref.watch(configProvider);

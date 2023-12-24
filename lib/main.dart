@@ -13,7 +13,7 @@ void main() {
   // runApp(const ProviderScope(child: MyRiverPodApp()));
 
   ///provider状态管理使用如下方式：
-  runApp(const MyApp());
+  runApp(const ProviderScope(child: MyApp()));
   PrintUtil.print('main函数');
 }
 
