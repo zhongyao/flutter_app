@@ -3,12 +3,13 @@ import 'package:flutter/cupertino.dart';
 import 'package:startup_namer/page/anim_page.dart';
 import 'package:startup_namer/page/entrance_page.dart';
 import 'package:startup_namer/page/hit_test_behavior_page.dart';
+import 'package:startup_namer/page/navigator_page.dart';
+import 'package:startup_namer/page/navigator_page_b.dart';
 import 'package:startup_namer/page/riverpod_page.dart';
 import 'package:startup_namer/page/riverpod_page2.dart';
 import 'package:startup_namer/page/riverpod_page3.dart';
 import 'package:startup_namer/page/scroll_page.dart';
 import 'package:startup_namer/page/tab_bar_view_page.dart';
-import 'package:startup_namer/page/test_page.dart';
 import 'package:startup_namer/page/test_widget_page.dart';
 import 'package:startup_namer/page/touch_event_page.dart';
 import 'package:startup_namer/page/video_player_page.dart';
@@ -31,6 +32,8 @@ class MyRouter {
   Map<String, WidgetBuilder> routers() {
     Map<String, WidgetBuilder> routers = {
       RouterPath.entrancePage: (context) => const EntrancePage(),
+      RouterPath.navigatorPage: (context) => const NavigatorPage(),
+      RouterPath.navigatorPageB: (context) => const NavigatorPageB(),
       RouterPath.customScrollView: (context) => const CustomScrollViewWidget(),
       RouterPath.nestedScrollViewWidget: (context) => const NestedScrollViewWidget(),
       RouterPath.easyRefreshNestedScrollViewPage: (context) => const ScrollPage(),

@@ -5,6 +5,12 @@ class RouterPath {
   ///主页页
   static const entrancePage = "/route/entrance_page";
 
+  ///Navigator路由跳转
+  static const navigatorPage = "/route/navigator_page";
+
+  ///Navigator路由跳转B页面
+  static const navigatorPageB = "/route/navigator_page_b";
+
   ///EasyRefresh + NestedScrollView + TabBar + TabBarView
   static const easyRefreshNestedScrollViewPage =
       "/route/easy_refresh_nested_scroll_view";
