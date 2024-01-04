@@ -2,7 +2,19 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:startup_namer/bean/person_info.dart';
 import 'package:startup_namer/util/print_util.dart';
 
-final stateChangeNotifier = StateNotifierProvider<MyNotifier, MyModel>((ref) {
+final stateChangeNotifier = StateNotifierProvider.autoDispose<MyNotifier, MyModel>((ref) {
+  ref.onDispose(() {
+    PrintUtil.print("stateChangeNotifier --- onDispose");
+  });
+
+  ref.onResume(() {
+    PrintUtil.print("stateChangeNotifier --- onResume");
+  });
+
+  ref.onCancel(() {
+    PrintUtil.print("stateChangeNotifier --- onCancel");
+  });
+
   var myNotifier =
       MyNotifier(MyModel(id: "--", name: "--", age: "--", gender: "--"));
   return myNotifier;

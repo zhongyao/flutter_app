@@ -14,6 +14,18 @@ class RiverPodPage3 extends ConsumerStatefulWidget {
 }
 
 class _RiverPodPage3State extends ConsumerState<RiverPodPage3> {
+
+  @override
+  void initState() {
+    PrintUtil.print("RiverPodPage3 --- initState");
+    super.initState();
+  }
+
+  @override
+  void didChangeDependencies() {
+    PrintUtil.print("RiverPodPage3 --- didChangeDependencies");
+    super.didChangeDependencies();
+  }
   @override
   Widget build(BuildContext context) {
     PrintUtil.print("RiverPodPage3 --- build");
@@ -49,6 +61,9 @@ class _RiverPodPage3State extends ConsumerState<RiverPodPage3> {
   Widget itemBtn() {
     return GestureDetector(
       onTap: () => {
+        /// 1、ref.read 是一种不监听provider状态的方法,它通常在用户交互触发的函数中使用。
+        /// 2、应该尽量避免使用 ref.read ，因为它不是响应式的。
+        /// 3、不要在build方法中使用 ref.read，它可能会导致预料之外的bug。
         // ref.read(stateChangeNotifier.notifier).updateCountry("America...."),
         ref.read(stateChangeNotifier.notifier).requestPersonalInfo()
       },
@@ -61,4 +76,17 @@ class _RiverPodPage3State extends ConsumerState<RiverPodPage3> {
               fontWeight: FontWeight.w600)),
     );
   }
+
+  @override
+  void deactivate() {
+    PrintUtil.print("RiverPodPage3 --- deactivate");
+    super.deactivate();
+  }
+
+  @override
+  void dispose() {
+    PrintUtil.print("RiverPodPage3 --- dispose");
+    super.dispose();
+  }
+
 }
