@@ -1,12 +1,13 @@
 import 'package:flutter/cupertino.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:startup_namer/base/common_base_state.dart';
 import 'package:startup_namer/page/widget/video_player_screen.dart';
 
-class VideoPlayerPage extends StatefulWidget {
+class VideoPlayerPage extends ConsumerStatefulWidget {
   const VideoPlayerPage({super.key});
 
   @override
-  State<StatefulWidget> createState() => _VideoPlayerPageState();
+  ConsumerState<ConsumerStatefulWidget> createState() => _VideoPlayerPageState();
 
 }
 

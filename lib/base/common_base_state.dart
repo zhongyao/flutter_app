@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:provider/provider.dart';
 
@@ -8,7 +9,7 @@ import 'common_appbar_generator.dart';
 import 'normal_page_abstract.dart';
 import 'normal_titlebar_abstract.dart';
 
-abstract class CommonPageState<T extends StatefulWidget> extends State<T>
+abstract class CommonPageState<T extends ConsumerStatefulWidget> extends ConsumerState<T>
     with
         NormalPageAbstract,
         BaseTitleBarConfigMixin,

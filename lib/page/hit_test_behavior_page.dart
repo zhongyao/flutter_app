@@ -1,14 +1,15 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:startup_namer/base/common_base_state.dart';
 import 'package:startup_namer/util/print_util.dart';
 
 ///HitTest事件分发
-class HitTestBehaviorPage extends StatefulWidget {
+class HitTestBehaviorPage extends ConsumerStatefulWidget {
   const HitTestBehaviorPage({super.key});
 
   @override
-  State<StatefulWidget> createState() => _HitTestBehaviorPageState();
+  ConsumerState<ConsumerStatefulWidget> createState() => _HitTestBehaviorPageState();
 }
 
 class _HitTestBehaviorPageState extends CommonPageState<HitTestBehaviorPage> {

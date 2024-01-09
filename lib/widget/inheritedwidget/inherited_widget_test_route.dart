@@ -1,16 +1,17 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:startup_namer/base/common_base_state.dart';
 import 'package:startup_namer/widget/inheritedwidget/share_data_widget.dart';
 import 'package:startup_namer/widget/inheritedwidget/test_widget.dart';
 
 ///InheritedWidget测试页
-class InheritedWidgetTestPage extends StatefulWidget {
+class InheritedWidgetTestPage extends ConsumerStatefulWidget {
   const InheritedWidgetTestPage({super.key});
 
   @override
-  State<StatefulWidget> createState() => _InheritedWidgetTestPageState();
+  ConsumerState<ConsumerStatefulWidget> createState() => _InheritedWidgetTestPageState();
 }
 
 class _InheritedWidgetTestPageState extends CommonPageState<InheritedWidgetTestPage> {

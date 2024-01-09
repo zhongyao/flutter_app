@@ -1,15 +1,16 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:startup_namer/base/common_base_state.dart';
 
 import '../delegate/sliver_header_delegate.dart';
 
 ///CustomScrollView示例
 ///reference:https://book.flutterchina.club/chapter6/custom_scrollview.html
-class CustomScrollViewWidget extends StatefulWidget {
+class CustomScrollViewWidget extends ConsumerStatefulWidget {
   const CustomScrollViewWidget({Key? key}) : super(key: key);
 
   @override
-  State<StatefulWidget> createState() {
+  ConsumerState<CustomScrollViewWidget> createState() {
     return _CustomScrollViewWidgetState();
   }
 }

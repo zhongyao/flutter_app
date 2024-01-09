@@ -1,15 +1,16 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:startup_namer/base/common_base_state.dart';
 import 'package:startup_namer/util/print_util.dart';
 
 ///手势事件页
-class TouchEventPage extends StatefulWidget {
+class TouchEventPage extends ConsumerStatefulWidget {
   const TouchEventPage({super.key});
 
   @override
-  State<StatefulWidget> createState() => _TouchEventPageState();
+  ConsumerState<ConsumerStatefulWidget> createState() => _TouchEventPageState();
 }
 
 class _TouchEventPageState extends CommonPageState<TouchEventPage> {

@@ -1,16 +1,17 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:startup_namer/base/common_base_state.dart';
 
 import '../my_router.dart';
 
 ///测试页
-class TestPage extends StatefulWidget {
+class TestPage extends ConsumerStatefulWidget {
   const TestPage({super.key});
 
   @override
-  State<StatefulWidget> createState() => _TestPageState();
+  ConsumerState<ConsumerStatefulWidget> createState() => _TestPageState();
 }
 
 class _TestPageState extends CommonPageState<TestPage> {

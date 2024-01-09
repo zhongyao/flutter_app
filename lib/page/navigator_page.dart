@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:startup_namer/base/common_base_state.dart';
 import 'package:startup_namer/router/popup/my_dialog.dart';
@@ -8,11 +9,11 @@ import 'package:startup_namer/util/router.dart';
 import '../router/popup/my_bottom_sheet.dart';
 
 ///Navigator跳转页面
-class NavigatorPage extends StatefulWidget {
+class NavigatorPage extends ConsumerStatefulWidget {
   const NavigatorPage({Key? key}) : super(key: key);
 
   @override
-  State<StatefulWidget> createState() {
+  ConsumerState<ConsumerStatefulWidget> createState() {
     return _NavigatorPageState();
   }
 }

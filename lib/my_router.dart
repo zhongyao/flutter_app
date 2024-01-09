@@ -5,6 +5,7 @@ import 'package:startup_namer/page/entrance_page.dart';
 import 'package:startup_namer/page/hit_test_behavior_page.dart';
 import 'package:startup_namer/page/navigator_page.dart';
 import 'package:startup_namer/page/navigator_page_b.dart';
+import 'package:startup_namer/page/notification_page.dart';
 import 'package:startup_namer/page/riverpod_page.dart';
 import 'package:startup_namer/page/riverpod_page2.dart';
 import 'package:startup_namer/page/riverpod_page3.dart';
@@ -35,6 +36,7 @@ class MyRouter {
       RouterPath.navigatorPage: (context) => const NavigatorPage(),
       RouterPath.navigatorPageB: (context) => const NavigatorPageB(),
       RouterPath.customScrollView: (context) => const CustomScrollViewWidget(),
+      RouterPath.notificationPage: (context) => const NotificationPage(),
       RouterPath.nestedScrollViewWidget: (context) => const NestedScrollViewWidget(),
       RouterPath.easyRefreshNestedScrollViewPage: (context) => const ScrollPage(),
       RouterPath.animPage: (context) => const AnimPage(),

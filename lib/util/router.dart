@@ -21,6 +21,9 @@ class RouterPath {
   ///CustomScrollView
   static const customScrollView = "/route/custom_scroll_view";
 
+  ///通知【监听】页面
+  static const notificationPage = "/route/notification_page";
+
   ///动画页
   static const animPage = "/route/anim_page";
 
