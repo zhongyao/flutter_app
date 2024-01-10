@@ -42,4 +42,6 @@ class _TestPageState extends CommonPageState<TestPage> {
       itemCount: myRouteKeyList.length,
     );
   }
+  @override
+  String? get pageTitle => "测试入口页";
 }

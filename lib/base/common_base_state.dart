@@ -55,21 +55,21 @@ abstract class CommonPageState<T extends ConsumerStatefulWidget> extends Consume
       },
       child: Scaffold(
         /// 普通自定义AppBar
-        // appBar: _getTitleBar(context),
+        appBar: _getTitleBar(context),
         /// 包含ShowMenu的系统AppBar示例
-        appBar: AppBar(
-          title:
-              const Text("AppBar的title", style: TextStyle(color: Colors.black)),
-          backgroundColor: Colors.transparent,
-          shadowColor: Colors.transparent,
-          systemOverlayStyle: const SystemUiOverlayStyle(
-            //设置状态栏的背景颜色
-            statusBarColor: Colors.white,
-            //状态栏的文字的颜色
-            statusBarIconBrightness: Brightness.light,
-          ),
-          actions: <Widget>[showMyMenuWidget(context)],
-        ),
+        // appBar: AppBar(
+        //   title:
+        //       const Text("AppBar的title", style: TextStyle(color: Colors.black)),
+        //   backgroundColor: Colors.transparent,
+        //   shadowColor: Colors.transparent,
+        //   systemOverlayStyle: const SystemUiOverlayStyle(
+        //     //设置状态栏的背景颜色
+        //     statusBarColor: Colors.white,
+        //     //状态栏的文字的颜色
+        //     statusBarIconBrightness: Brightness.light,
+        //   ),
+        //   actions: <Widget>[showMyMenuWidget(context)],
+        // ),
         body: _getContent(context),
         extendBodyBehindAppBar: isExtendBodyBehindAppBar,
         bottomNavigationBar: getBottomNavigationBar(context),

@@ -47,4 +47,7 @@ class _NotificationPageState extends CommonPageState<NotificationPage> {
               return ListTile(title: Text("item-$index"));
             }));
   }
+
+  @override
+  String? get pageTitle => "NotificationPage";
 }

@@ -24,6 +24,9 @@ class RouterPath {
   ///通知【监听】页面
   static const notificationPage = "/route/notification_page";
 
+  ///通知【监听】页面2 -- 自定义Notification
+  static const notificationPage2 = "/route/notification_page2";
+
   ///动画页
   static const animPage = "/route/anim_page";
 
