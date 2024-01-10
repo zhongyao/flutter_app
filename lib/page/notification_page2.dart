@@ -23,7 +23,10 @@ class _NotificationPageState extends CommonPageState<NotificationPage2> {
     // return notificationListenerWidget();
 
     ///应用2：自定义Notification
-    return customNotificationWidget();
+    // return customNotificationWidget();
+
+    ///应用3：通知冒泡举例
+    return notificationBubbling();
   }
 
   Widget notificationListenerWidget() {
@@ -71,6 +74,19 @@ class _NotificationPageState extends CommonPageState<NotificationPage2> {
         ),
       ),
     );
+  }
+
+  Widget notificationBubbling() {
+    ///两个NotificationListener进行了嵌套，子NotificationListener的onNotification回调返回了false，
+    ///表示不阻止冒泡，所以父NotificationListener仍然会受到通知，所以控制台会打印出通知信息；
+    ///如果将子NotificationListener的onNotification回调的返回值改为true，
+    ///则父NotificationListener便不会再打印通知了，因为子NotificationListener已经终止通知冒泡了。
+    return NotificationListener<MyNotification>(
+        onNotification: (notification) {
+          PrintUtil.print("Notification -- 父${notification.msg}");
+          return false;
+        },
+        child: NotificationListener(child: customNotificationWidget()));
   }
 
   @override
