@@ -48,3 +48,4 @@
 #### [EasyRefresh(有注释) + NestedScrollView + TabBar + TabBarView](https://github.com/zhongyao/flutter_app/blob/master/lib/page/widget/refresh_nested_scroll_view_widget.dart)
 
 #### [滑动事件监听NotificationListener](https://github.com/zhongyao/flutter_app/blob/master/lib/page/notification_page.dart)
+#### [自定义Notification](https://github.com/zhongyao/flutter_app/blob/master/lib/page/notification_page2.dart)

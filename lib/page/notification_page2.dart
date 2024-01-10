@@ -77,6 +77,7 @@ class _NotificationPageState extends CommonPageState<NotificationPage2> {
   String? get pageTitle => "NotificationPage2";
 }
 
+///自定义Notification类
 class MyNotification extends Notification {
   MyNotification(this.msg);
 
