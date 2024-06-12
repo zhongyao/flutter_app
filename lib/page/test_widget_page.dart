@@ -6,7 +6,9 @@ import 'package:startup_namer/router/popup/my_dialog.dart';
 import 'package:startup_namer/util/print_util.dart';
 import 'package:startup_namer/util/router.dart';
 
+import '../router/popup/my_bottom_modalpopup.dart';
 import '../router/popup/my_bottom_sheet.dart';
+import '../router/popup/my_menu.dart';
 
 ///普通控件测试页面
 class TestWidgetPage extends ConsumerStatefulWidget {
@@ -21,40 +23,38 @@ class TestWidgetPage extends ConsumerStatefulWidget {
 class _TestWidgetPageState extends CommonPageState<TestWidgetPage> {
   @override
   Widget buildPageContent(BuildContext context) {
-    return Material(
-      child: Column(
-        children: [
-          GestureDetector(
-            onTap: () => {
-              showMyDialog(context, (value) {
-                PrintUtil.print("Dialog内容被点击了");
-              })
-            },
-            child: const Text("点击弹出Dialog"),
-          ),
-          SizedBox(
-            height: 20.w,
-          ),
-          GestureDetector(
-            onTap: () => {showMyBottomSheet(context)},
-            child: const Text("点击弹出BottomSheet"),
-          ),
-          SizedBox(
-            height: 20.w,
-          ),
-          GestureDetector(
-            onTap: () => {showMyBottomSheet(context)},
-            child: const Text("点击弹出Menu"),
-          ),
-          SizedBox(
-            height: 20.w,
-          ),
-          GestureDetector(
-            onTap: () => {goToInheritedWidgetPage(context)},
-            child: const Text("点击进入测试InheritedWidget页面"),
-          )
-        ],
-      ),
+    return Column(
+      children: [
+        GestureDetector(
+          onTap: () => {
+            showMyDialog(context, (value) {
+              PrintUtil.print("Dialog内容被点击了");
+            })
+          },
+          child: const Text("点击弹出Dialog"),
+        ),
+        SizedBox(
+          height: 20.w,
+        ),
+        GestureDetector(
+          onTap: () => {showMyBottomSheet(context)},
+          child: const Text("点击弹出BottomSheet"),
+        ),
+        SizedBox(
+          height: 20.w,
+        ),
+        GestureDetector(
+          onTap: () => {showBottomModalPopup(context)},
+          child: const Text("点击弹出showCupertinoModalPopup【包含键盘遮挡输入框适配】"),
+        ),
+        SizedBox(
+          height: 20.w,
+        ),
+        GestureDetector(
+          onTap: () => {goToInheritedWidgetPage(context)},
+          child: const Text("点击进入测试InheritedWidget页面"),
+        )
+      ],
     );
   }
 
