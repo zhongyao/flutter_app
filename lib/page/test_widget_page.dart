@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:startup_namer/base/common_base_state.dart';
+import 'package:startup_namer/page/widget/fittedbox_test_widget.dart';
 import 'package:startup_namer/router/popup/my_dialog.dart';
 import 'package:startup_namer/util/print_util.dart';
 import 'package:startup_namer/util/router.dart';
@@ -53,7 +54,11 @@ class _TestWidgetPageState extends CommonPageState<TestWidgetPage> {
         GestureDetector(
           onTap: () => {goToInheritedWidgetPage(context)},
           child: const Text("点击进入测试InheritedWidget页面"),
-        )
+        ),
+        SizedBox(
+          height: 20.w,
+        ),
+        const FittedBoxTestWidget()
       ],
     );
   }
