@@ -3,6 +3,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:startup_namer/base/common_base_state.dart';
 import 'package:startup_namer/page/widget/fittedbox_test_widget.dart';
+import 'package:startup_namer/page/widget/text_overflow_test_widget.dart';
 import 'package:startup_namer/router/popup/my_dialog.dart';
 import 'package:startup_namer/util/print_util.dart';
 import 'package:startup_namer/util/router.dart';
@@ -58,7 +59,11 @@ class _TestWidgetPageState extends CommonPageState<TestWidgetPage> {
         SizedBox(
           height: 20.w,
         ),
-        const FittedBoxTestWidget()
+        const FittedBoxTestWidget(),
+        SizedBox(
+          height: 20.w,
+        ),
+        const TextOverflowTestWidget()
       ],
     );
   }
