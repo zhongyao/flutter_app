@@ -51,3 +51,4 @@
 #### [自定义Notification + 通知冒泡](https://github.com/zhongyao/flutter_app/blob/master/lib/page/notification_page2.dart)
 #### [FittedBox适配](https://github.com/zhongyao/flutter_app/blob/master/lib/page/widget/fittedbox_test_widget.dart)
 #### [Text的overflow适配--Expanded与Flexible的区别](https://github.com/zhongyao/flutter_app/blob/master/lib/page/widget/text_overflow_test_widget.dart)
+#### [Text的overflow适配--Flexible与Container的aliment的使用注意事项](https://github.com/zhongyao/flutter_app/blob/master/lib/page/widget/middle_text_over_flow_widget.dart)
