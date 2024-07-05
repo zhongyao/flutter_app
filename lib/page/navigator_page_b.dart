@@ -50,6 +50,9 @@ class _NavigatorPageBState extends CommonPageState<NavigatorPageB> {
   }
 
   @override
+  String? get pageTitle => "页面B";
+
+  @override
   void deactivate() {
     PrintUtil.print("页面B ---- deactivate");
     super.deactivate();
@@ -62,6 +65,10 @@ class _NavigatorPageBState extends CommonPageState<NavigatorPageB> {
   }
 
   void goBackToPageA(BuildContext context) {
-    Navigator.of(context).pop();
+    // Navigator.of(context).pop();
+    Navigator.of(context).popUntil((route) {
+      PrintUtil.print("route:${route.settings.name}");
+      return route.settings.name == RouterPath.navigatorPage;
+    });
   }
 }

@@ -38,7 +38,13 @@ class _NavigatorPageState extends CommonPageState<NavigatorPage> {
       child: Column(
         children: [
           GestureDetector(
-            onTap: () => {goToPageB(context)},
+            // onTap: () => {goToPageB(context)},
+            onTap: () => {
+              showMyDialog(context, (value) {
+                PrintUtil.print("Dialog内容被点击了");
+              })
+            },
+
             /// 跳转A-B-A生命周期：
             /// HongRi --> 页面A -- initState
             /// HongRi --> 页面A -- didChangeDependencies
@@ -57,6 +63,9 @@ class _NavigatorPageState extends CommonPageState<NavigatorPage> {
       ),
     );
   }
+
+  @override
+  String? get pageTitle => "页面A";
 
   @override
   void deactivate() {
