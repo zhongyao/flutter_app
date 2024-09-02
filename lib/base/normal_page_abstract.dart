@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:provider/single_child_widget.dart';
 
-abstract class NormalPageAbstract {
+mixin NormalPageAbstract {
   // 状态管理注入
   // Provider 使用参考:https://flutter.cn/docs/development/data-and-backend/state-mgmt/simple
   List<SingleChildWidget> get getProviders => [];

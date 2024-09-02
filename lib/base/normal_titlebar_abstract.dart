@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 /// 页面导航相关方法
-abstract class BaseTitleBarConfigMixin {
+mixin BaseTitleBarConfigMixin {
   // 子类重写 返回false 可隐藏titlebar
   bool isHiddenAppBar() => false;
 

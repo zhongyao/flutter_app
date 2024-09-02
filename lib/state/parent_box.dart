@@ -28,7 +28,7 @@ class TabBoxB extends StatelessWidget {
   final bool active;
   final ValueChanged<bool> onChanged;
 
-  const TabBoxB({Key? key, this.active: false, required this.onChanged})
+  const TabBoxB({Key? key, this.active = false, required this.onChanged})
       : super(key: key);
 
   void _handleTap() {

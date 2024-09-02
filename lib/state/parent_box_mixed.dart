@@ -32,7 +32,7 @@ class TapBoxC extends StatefulWidget {
   final bool active;
   final ValueChanged<bool> onChanged;
 
-  TapBoxC({Key? key, this.active: false, required this.onChanged})
+  TapBoxC({Key? key, this.active = false, required this.onChanged})
       : super(key: key);
 
   @override

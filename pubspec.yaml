@@ -18,8 +18,8 @@ publish_to: 'none' # Remove this line if you wish to publish to pub.dev
 version: 1.0.0+1
 
 environment:
-  sdk: ">=2.19.6 <=3.1.4"
-  flutter: ">=2.5.0"
+  sdk: ">=3.0.0 <=4.0.0"
+  flutter: ">=3.13.0"
 
 dependencies:
   flutter:
@@ -45,7 +45,10 @@ dependencies:
   equatable: ^2.0.5
   flutter_screenutil: ^5.7.0
 #  webview_flutter: 0.3.19+9
-  flutter_riverpod: ^2.4.4
+  # 官方最新状态管理库
+  flutter_riverpod: ^2.4.9
+  # 通过注解(annotations)简化了Provider的定义，并与riverpod_generator配合使用，实现代码的自动生成。
+  riverpod_annotation: ^2.3.3
   video_player: ^2.7.2
   chewie: ^1.0.2
   easy_refresh: ^3.3.2+1
@@ -60,6 +63,13 @@ dev_dependencies:
     sdk: flutter
 
   flutter_lints: ^2.0.1
+
+  # 可以自动生成各种类型的Provider，从而减少手动编写Provider的工作量。
+  riverpod_generator: ^2.3.9
+
+  # 用于代码生成，通过解析源代码并生成新的代码文件，帮助开发者自动生成重复性代码，从而提高开发效率，如序列化/反序列化、依赖注入、路由管理等。
+  # 指令： flutter pub run build_runner build
+  build_runner: ^2.4.7
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec
 

@@ -10,6 +10,7 @@ import 'package:startup_namer/page/notification_page2.dart';
 import 'package:startup_namer/page/riverpod_page.dart';
 import 'package:startup_namer/page/riverpod_page2.dart';
 import 'package:startup_namer/page/riverpod_page3.dart';
+import 'package:startup_namer/page/riverpod_page4.dart';
 import 'package:startup_namer/page/scroll_page.dart';
 import 'package:startup_namer/page/tab_bar_view_page.dart';
 import 'package:startup_namer/page/test_widget_page.dart';
@@ -53,6 +54,7 @@ class MyRouter {
       RouterPath.riverPodPage: (context) => const RiverPodPage(),
       RouterPath.riverPodPage2: (context) => const RiverPodPage2(),
       RouterPath.riverPodPage3: (context) => const RiverPodPage3(),
+      RouterPath.riverPodPage4: (context) => const RiverPodPage4(),
     };
     return routers;
   }
