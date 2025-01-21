@@ -61,4 +61,7 @@ class RouterPath {
 
   ///riverpod状态管理页3 --- 【AutoDisposeNotifierProvider】
   static const riverPodPage4 = "/route/riverpod_page4";
+
+  ///WebView页面
+  static const webViewPage = "/route/web_view_page";
 }
